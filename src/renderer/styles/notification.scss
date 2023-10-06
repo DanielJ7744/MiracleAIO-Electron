@@ -1,0 +1,282 @@
+@import './variables.scss';
+
+.darkNotification {
+  position: absolute;
+  bottom: 16px;
+  left: 20px;
+  background: $bgSecond;
+  border: $borderDark;
+  border-radius: 10px;
+
+  .headerTitle {
+    @include flexRowTop();
+    justify-content: center;
+    text-align: center;
+    background: $bgThird;
+    border-radius: 8px 8px 0px 0px;
+    border: 1px solid #19181d;
+    padding: 10px 0;
+    gap: 4px;
+
+    span {
+      @include font10();
+      color: white;
+    }
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .notificationBody {
+    .notificationContent {
+      height: 100%;
+      max-height: 269px;
+      overflow-y: scroll;
+      .content {
+        @include flexColumn();
+        border-radius: 5px;
+        margin: 6px 8px;
+        background: $bgThird;
+        border: 2px solid #19181d;
+
+        .header {
+          @include flexRowSpaceBetween();
+          padding: 10px;
+          margin: 0;
+
+          .site__status {
+            @include flexColumn();
+            gap: 3px;
+
+            .status {
+              @include font10();
+              color: $green;
+            }
+
+            .siteName {
+              @include font10();
+              color: $accent;
+            }
+          }
+
+          img {
+            width: 30px;
+          }
+        }
+
+        .borders {
+          border: $border-light;
+          margin-bottom: 10px;
+        }
+
+        .body {
+          @include flexRowTop();
+          @include fontNine();
+          padding: 0px 14px 10px 14px;
+          gap: 2px;
+
+          .region {
+            @include fontNine();
+            color: white;
+          }
+
+          .price {
+            @include fontNine();
+            color: white;
+          }
+
+          .profile {
+            @include fontNine();
+            color: $gray;
+          }
+
+          .time {
+            @include fontNine();
+            color: white;
+          }
+        }
+
+        .footer {
+          @include flexRowTop();
+          background: $bgBlack;
+          padding: 10px 14px;
+
+          .brand {
+            @include font12();
+            color: $accent;
+          }
+
+          .productName {
+            @include font10();
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .notificationFooter {
+    @include flexColumn();
+    text-align: center;
+    flex: 1;
+    justify-content: flex-end;
+    padding-top: 130px;
+    .clearBtn {
+      background: linear-gradient(115.31deg, #ff8990 0%, #ff607c 100%), linear-gradient(0deg, #ffffff, #ffffff);
+      padding: 12px 32px;
+      margin: 0 auto;
+      border-radius: 5px;
+      align-content: center;
+      align-items: center;
+      display: flex;
+      gap: 4px;
+      margin-bottom: 18px;
+      span {
+        @include font10();
+        color: white;
+      }
+    }
+  }
+}
+.lightNotification {
+  position: absolute;
+  bottom: 16px;
+  left: 20px;
+  background: $bgLight;
+  border: $borderLight;
+  border-radius: 10px;
+
+  .headerTitle {
+    @include flexRowTop();
+    justify-content: center;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 8px 8px 0px 0px;
+    border: 1px solid #ededed;
+    padding: 10px 0;
+    gap: 4px;
+
+    span {
+      @include font10();
+      color: $bgBlack;
+    }
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .notificationBody {
+    .notificationContent {
+      height: 100%;
+      max-height: 269px;
+      overflow-y: scroll;
+      .content {
+        @include flexColumn();
+        border-radius: 5px;
+        margin: 6px 8px;
+        background: #ffffff;
+        border: $borderLight;
+
+        .header {
+          @include flexRowSpaceBetween();
+          padding: 10px;
+          margin: 0;
+
+          .site__status {
+            @include flexColumn();
+            gap: 3px;
+
+            .status {
+              @include font10();
+              color: $green;
+            }
+
+            .siteName {
+              @include font10();
+              color: $accent;
+            }
+          }
+
+          img {
+            width: 30px;
+          }
+        }
+
+        .borders {
+          border: 1px solid #ededed;
+          margin-bottom: 10px;
+        }
+
+        .body {
+          @include flexRowTop();
+          @include fontNine();
+          padding: 0px 14px 10px 14px;
+          gap: 2px;
+
+          .region {
+            @include fontNine();
+            color: $bgBlack;
+          }
+
+          .price {
+            @include fontNine();
+            color: $bgBlack;
+          }
+
+          .profile {
+            @include fontNine();
+            color: $gray;
+          }
+
+          .time {
+            @include fontNine();
+            color: $bgBlack;
+          }
+        }
+
+        .footer {
+          @include flexRowTop();
+          background: #fafbff;
+          padding: 10px 14px;
+
+          .brand {
+            @include font12();
+            color: $accent;
+          }
+
+          .productName {
+            @include font10();
+            color: $bgBlack;
+          }
+        }
+      }
+    }
+  }
+
+  .notificationFooter {
+    @include flexColumn();
+    text-align: center;
+    flex: 1;
+    justify-content: flex-end;
+    padding-top: 190px;
+    .clearBtn {
+      background: linear-gradient(115.31deg, #ff8990 0%, #ff607c 100%), linear-gradient(0deg, #ffffff, #ffffff);
+      padding: 12px 32px;
+      margin: 0 auto;
+      border-radius: 5px;
+      align-content: center;
+      align-items: center;
+      display: flex;
+      gap: 4px;
+      margin-bottom: 18px;
+      span {
+        @include font10();
+        color: $bgBlack;
+      }
+    }
+  }
+}

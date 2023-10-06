@@ -1,0 +1,875 @@
+@import './variables.scss';
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dashboard__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 4px 32px 28px 0;
+  gap: 14px;
+
+  .dash__top {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 14px 14px;
+
+    .left__dash {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+
+      .darkwelcomeLeft {
+        background: $bgSecond;
+        border: $borderDark;
+        border-radius: $borderRadius10;
+        width: 100%;
+
+        .darkwelcome {
+          @include flexRowTop();
+          gap: 27px;
+          background: url('../assets/dashboard/dash-logo.png') top right no-repeat;
+          position: relative;
+          border-top-right-radius: 5px;
+
+          .left {
+            padding: 20px 0 24px 28px;
+            width: 57%;
+
+            .welcomeTo {
+              @include fontNine;
+              color: $gray;
+            }
+
+            .welcomeTo__soft {
+              @include font14;
+              color: white;
+              padding-top: 6px;
+            }
+
+            .welcomeBottom {
+              margin-top: 22px;
+              border: $border-light;
+              border-radius: $borderRadius5;
+
+              .darkwelcomeBack {
+                background: $bgBlack;
+                padding: 13px 16px;
+                @include flexRowSpaceBetween();
+                gap: 59px;
+
+                .welcome__text {
+                  @include fontNine();
+                  color: $gray;
+                }
+
+                .welcome__user {
+                  @include font12();
+                  color: $accent;
+                }
+              }
+
+              .darkwelcomeButtons {
+                @include flexRowSpaceBetween();
+                gap: 10px;
+                padding: 12px 20px 16px 20px;
+                background: $bgThird;
+
+                .darkdashboard {
+                  padding: 12px 18px;
+                  color: white;
+                  background: $bgPurple;
+                  border-radius: $borderRadius5;
+                }
+
+                .darkaccount {
+                  padding: 12px 25px;
+                  color: $gray;
+                  background: $bgSecond;
+                  border-radius: $borderRadius5;
+                }
+              }
+            }
+          }
+
+          .right {
+            position: absolute;
+            right: 16px;
+            top: 21%;
+
+            .dashBack {
+              height: 123px;
+              width: 100%;
+            }
+
+            .darkversion {
+              @include flexRowTop();
+              border-radius: 2px;
+              border-bottom: 2px solid #19181d;
+              width: 100%;
+              gap: 62px;
+              padding: 0 0 5px 0;
+
+              .darkversion__text {
+                color: $accent;
+                @include fontNine();
+              }
+
+              .darkversion__number {
+                color: white;
+                @include font10();
+              }
+            }
+          }
+        }
+      }
+      .lightwelcomeLeft {
+        background: $bgLight;
+        border: $borderLight;
+        border-radius: $borderRadius10;
+        width: 100%;
+
+        .lightwelcome {
+          @include flexRowTop();
+          gap: 27px;
+          background: url('../assets/dashboard/dash-logo.png') top right no-repeat;
+          position: relative;
+          border-top-right-radius: 5px;
+
+          .left {
+            padding: 20px 0 24px 28px;
+            width: 57%;
+
+            .welcomeTo {
+              @include fontNine;
+              color: $gray;
+            }
+
+            .welcomeTo__soft {
+              @include font14;
+              color: $bgBlack;
+              padding-top: 6px;
+            }
+
+            .welcomeBottom {
+              margin-top: 22px;
+              border: $borderLight;
+              border-radius: $borderRadius5;
+
+              .lightwelcomeBack {
+                background: #fafbff;
+                padding: 13px 16px;
+                @include flexRowSpaceBetween();
+                gap: 59px;
+
+                .welcome__text {
+                  @include fontNine();
+                  color: $gray;
+                }
+
+                .welcome__user {
+                  @include font12();
+                  color: $accent;
+                }
+              }
+
+              .lightwelcomeButtons {
+                @include flexRowSpaceBetween();
+                gap: 10px;
+                padding: 12px 20px 16px 20px;
+                background: #ffffff;
+
+                .lightdashboard {
+                  padding: 12px 18px;
+                  color: $bgBlack;
+                  background: linear-gradient(115.31deg, #e3b4ff 0%, #9476ff 100%), linear-gradient(0deg, #f0f2f9, #f0f2f9);
+                  border-radius: $borderRadius5;
+                }
+
+                .lightaccount {
+                  padding: 12px 25px;
+                  color: $gray;
+                  background: $bgLight;
+                  border-radius: $borderRadius5;
+                  border: 1px solid #ededed;
+                }
+              }
+            }
+          }
+
+          .right {
+            position: absolute;
+            right: 16px;
+            top: 21%;
+
+            .dashBack {
+              height: 123px;
+              width: 100%;
+            }
+
+            .lightversion {
+              @include flexRowTop();
+              border-radius: 2px;
+              border-bottom: 2px solid #ededed;
+              width: 100%;
+              gap: 62px;
+              padding: 0 0 5px 0;
+
+              .lightversion__text {
+                color: $accent;
+                @include fontNine();
+              }
+
+              .lightversion__number {
+                color: $bgBlack;
+                @include font10();
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .right__Release {
+      @include flexColumn();
+      gap: 14px;
+      width: 112%;
+
+      .darkRelease {
+        background: $bgSecond;
+        border: $borderDark;
+        border-radius: $borderRadius10;
+        @include flexColumnTop();
+        gap: 9px;
+
+        .ReleaseCalendar {
+          @include flexRowTop();
+          gap: 36px;
+          margin-right: auto;
+          padding: 0 36px 0 0;
+          .ReleaseDay {
+            @include flexRowTop();
+            gap: 3px;
+
+            .releaseMonth {
+              color: $accent;
+              @include font12();
+              justify-content: flex-start;
+            }
+
+            .releaseCalendar {
+              @include fontNine;
+              color: $gray;
+            }
+          }
+        }
+
+        .ReleaseDate {
+          @include flexRowTop();
+          gap: 5px;
+          width: 517px;
+          overflow: auto;
+          margin-right: auto;
+          margin: 0 36px 0 0;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+
+        .Release__Days {
+          cursor: pointer;
+          border: $borderDark;
+          padding: 14px 20px;
+          color: $gray;
+          @include font10();
+          border-radius: $borderRadius5;
+        }
+
+        .activeReleaseDays {
+          border: 2px solid #00c2ff;
+        }
+        .DashboardProduct {
+          height: 100%;
+          max-height: 475px;
+          overflow-y: scroll;
+          padding-right: 45px;
+          .releaseProduct {
+            @include flexColumn();
+            .Release__product {
+              @include flexRowSpaceBetween();
+              gap: 36px;
+              width: 100%;
+              border-bottom: $borderDark;
+              .release__image {
+                padding: 10px 37px 10px 16px;
+                border-right: $borderDark;
+                border-radius: 2px;
+              }
+
+              .release__product_content {
+                @include flexColumnTop();
+                justify-content: flex-start;
+
+                .productName {
+                  @include flexRowTop();
+                  margin-right: auto;
+
+                  gap: 5px;
+
+                  .productBrand {
+                    color: $accent;
+                    @include font12();
+                  }
+
+                  .productDetail {
+                    @include font10();
+                    color: $bgBlack;
+                  }
+                }
+
+                .selectedReleaseDay {
+                  color: $blue;
+                  @include font10();
+                  margin-right: auto;
+                  padding: 7px 0;
+                }
+
+                .productMoreInfo {
+                  @include font10();
+                  color: $gray;
+                }
+              }
+              .buttons__release {
+                gap: 5px;
+                @include flexColumn();
+                .create_task {
+                  @include flexRowTop();
+                  border: $borderDark;
+                  background: $bgSecond;
+                  gap: 5px;
+                  padding: 12px 15px;
+                  border-radius: $borderRadius5;
+                  cursor: pointer;
+                  &:hover {
+                    background: $bgBlue;
+                    .taskBtn {
+                      background: transparent;
+                    }
+                  }
+
+                  .taskBtn {
+                    background: $bgSecond;
+                    @include fontNine();
+                    color: white;
+                    cursor: pointer;
+                  }
+                }
+                .ShowMore {
+                  @include flexRowTop();
+                  border: $borderDark;
+                  background: $bgSecond;
+                  gap: 16px;
+                  padding: 12px 15px;
+                  border-radius: $borderRadius5;
+                  cursor: pointer;
+                  &:hover {
+                    background: $bgLila;
+                    .showMoreBtn {
+                      background: transparent;
+                    }
+                  }
+                  .showMoreBtn {
+                    background: $bgSecond;
+                    @include fontNine();
+                    color: white;
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .lightRelease {
+        background: $bgLight;
+        border: $borderLight;
+        border-radius: $borderRadius10;
+        @include flexColumnTop();
+        gap: 9px;
+
+        .ReleaseCalendar {
+          @include flexRowTop();
+          gap: 36px;
+          margin-right: auto;
+          padding: 0 36px 0 0;
+          .ReleaseDay {
+            @include flexRowTop();
+            gap: 3px;
+
+            .releaseMonth {
+              color: $accent;
+              @include font12();
+              justify-content: flex-start;
+            }
+
+            .releaseCalendar {
+              @include fontNine;
+              color: $gray;
+            }
+          }
+        }
+
+        .ReleaseDate {
+          @include flexRowTop();
+          gap: 5px;
+          width: 517px;
+          overflow: auto;
+          margin-right: auto;
+          margin: 0 36px 0 0;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+
+        .Release__Days {
+          cursor: pointer;
+          border: $borderLight;
+          padding: 14px 20px;
+          color: $gray;
+          @include font10();
+          border-radius: $borderRadius5;
+        }
+
+        .activeReleaseDays {
+          border: 2px solid #00c2ff;
+        }
+        .DashboardProduct {
+          height: 100%;
+          max-height: 475px;
+          overflow-y: scroll;
+          padding-right: 45px;
+          .releaseProduct {
+            @include flexColumn();
+            .Release__product {
+              @include flexRowSpaceBetween();
+              gap: 36px;
+              width: 100%;
+              border-bottom: $borderLight;
+              .release__image {
+                padding: 10px 37px 10px 16px;
+                border-right: $borderLight;
+                border-radius: 2px;
+              }
+
+              .release__product_content {
+                @include flexColumnTop();
+                justify-content: flex-start;
+
+                .productName {
+                  @include flexRowTop();
+                  margin-right: auto;
+
+                  gap: 5px;
+
+                  .productBrand {
+                    color: $accent;
+                    @include font12();
+                  }
+
+                  .productDetail {
+                    @include font10();
+                    color: $bgBlack;
+                  }
+                }
+
+                .selectedReleaseDay {
+                  color: $blue;
+                  @include font10();
+                  margin-right: auto;
+                  padding: 7px 0;
+                }
+
+                .productMoreInfo {
+                  @include font10();
+                  color: $gray;
+                }
+              }
+              .buttons__release {
+                gap: 5px;
+                @include flexColumn();
+                .create_task {
+                  @include flexRowTop();
+                  border: $borderLight;
+                  background: $bgLight;
+                  gap: 5px;
+                  padding: 12px 15px;
+                  border-radius: $borderRadius5;
+                  cursor: pointer;
+                  &:hover {
+                    background: $bgBlue;
+                    .taskBtn {
+                      background: transparent;
+                    }
+                  }
+
+                  .taskBtn {
+                    background: $bgLight;
+                    @include fontNine();
+                    color: $bgBlack;
+                    cursor: pointer;
+                  }
+                }
+                .ShowMore {
+                  @include flexRowTop();
+                  border: $borderLight;
+                  background: $bgLight;
+                  gap: 16px;
+                  padding: 12px 15px;
+                  border-radius: $borderRadius5;
+                  cursor: pointer;
+                  &:hover {
+                    background: $bgLila;
+                    .showMoreBtn {
+                      background: transparent;
+                    }
+                  }
+                  .showMoreBtn {
+                    background: $bgLight;
+                    @include fontNine();
+                    color: $bgBlack;
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .lightwelcome {
+    }
+  }
+
+  .dash__bottom {
+    @include flexRowSpaceBetween();
+    gap: 14px;
+
+    .leftCheckout {
+      @include flexColumnTop();
+      gap: 14px;
+      min-width: 43%;
+    }
+
+    .rightCheckout {
+      min-width: 582px;
+      background: $bgSecond;
+      border: $borderDark;
+      border-radius: $borderRadius10;
+    }
+  }
+}
+.blur {
+  filter: blur(1px);
+}
+.darkClearModal {
+  background: $bgSecond;
+  border-radius: 10px;
+  border: $borderDark;
+  width: 280px;
+  height: 105px;
+  position: absolute;
+  right: 32%;
+  top: 41%;
+  .darkSure {
+    background: $bgThird;
+    padding: 12px 45px;
+    @include font10();
+    color: white;
+  }
+  .ActionButtons {
+    background: transparent;
+    @include flexRowSpaceBetween();
+    margin: 13px 27px;
+    gap: 6px;
+    .backBtn {
+      color: white;
+      background: $bgThird;
+      border-radius: 5px;
+      padding: 13px 42px;
+      @include font10();
+    }
+    .clearBtn {
+      border-radius: 5px;
+      background: $bgRed;
+      color: white;
+      @include flexRowTop();
+      @include font10();
+      padding: 10px 32px;
+      button {
+        color: white;
+        background: transparent;
+      }
+    }
+  }
+}
+.lightClearModal {
+  background: $bgLight;
+  border-radius: 10px;
+  border: $borderDark;
+  width: 341px;
+  height: 105px;
+  position: absolute;
+  color: $lightBlack;
+  right: 32%;
+  top: 41%;
+  .lightSure {
+    background: white;
+    padding: 12px 45px;
+    @include font10();
+    color: $lightBlack;
+  }
+}
+
+.analytics__wrapper {
+  width: 66%;
+
+  .table {
+    height: calc(100vh - 396px);
+    margin-bottom: 8px;
+
+    .table__row {
+      > *:nth-child(2) {
+        min-width: 224px;
+      }
+
+      > *:nth-child(3) {
+        max-width: 64px;
+      }
+
+      > *:nth-child(4) {
+        max-width: 56px;
+      }
+
+      > *:nth-child(5) {
+        max-width: 72px;
+      }
+    }
+
+    .table__body {
+      .table__row {
+        cursor: pointer;
+      }
+    }
+
+    .table__image__wrapper {
+      .table__image {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.half--button {
+  width: 49%;
+}
+
+.analytics__buttons__wrapper {
+  display: flex;
+}
+
+.setup__wrapper {
+  width: 32%;
+
+  .setup__container {
+    background: $bgLightest;
+    color: $neutral;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 16px;
+    width: 100%;
+    margin-top: 32px;
+    border-radius: 8px;
+    height: calc(100vh - 352px);
+    max-height: calc(100vh - 352px);
+    overflow: auto;
+
+    h3 {
+      margin: 0;
+      color: #fff;
+    }
+
+    .input__split {
+      font-weight: bold;
+
+      span {
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+.product__details {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  display: flex;
+}
+
+.product__image__wrapper {
+  height: 64px;
+  width: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.product__image {
+  height: 100%;
+  border-radius: 8px;
+}
+
+.product__title {
+  font-weight: bold;
+}
+
+.square-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  width: 20px;
+  padding: 8px 8px 8px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: rgba($blue, 0.2);
+
+  &:hover {
+    transform: translateY(-2px);
+    filter: brightness(80%);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.square-button-img {
+  height: 12px;
+  width: 12px;
+}
+
+.release {
+  width: 32%;
+  height: 162px;
+  background: $bgLight;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.release__image__wrapper {
+  height: 72px;
+  width: 100%;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.release__image {
+  height: 100%;
+}
+
+.release__title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.release__date {
+  font-size: 12px;
+}
+
+.release__button {
+  height: 32px;
+  width: 100%;
+  margin-top: 8px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba($green, 0.2);
+  color: $green;
+  cursor: pointer;
+}
+
+.analytics {
+  width: 32%;
+  height: 120px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $bgLight;
+
+  &.blue {
+    background: rgba($blue, 0.2);
+    color: $blue;
+  }
+
+  &.green {
+    background: rgba($green, 0.2);
+    color: $green;
+  }
+
+  &.red {
+    background: rgba($red, 0.2);
+    color: $red;
+  }
+
+  .analytics__image__wrapper {
+  }
+}
+
+.analytics__image__wrapper {
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+
+  .analytics__image {
+    height: 52px;
+    width: 52px;
+  }
+}
+
+.analytics__text {
+  .analytics__value {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 4px;
+  }
+
+  .analytics__description {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+  }
+}

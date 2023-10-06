@@ -1,0 +1,1167 @@
+@import './variables';
+
+.Profile {
+  @include flexColumn();
+  width: 100%;
+  position: relative;
+
+  .dark__groupTitle {
+    @include font12();
+    color: white;
+  }
+
+  .dark__subTitle {
+    @include fontNine();
+    color: $gray;
+  }
+  .light__groupTitle {
+    @include font12();
+    color: $lightBlack;
+  }
+
+  .light__subTitle {
+    @include fontNine();
+    color: $gray;
+  }
+
+  button {
+    background: $bgSecond;
+    border: $borderDark;
+    border-radius: 5px;
+    text-align: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    position: relative;
+  }
+  ._createBtn {
+    background: $bgPurple;
+  }
+  .dark__createBtn:hover {
+    background: $bgPurple;
+  }
+  .create_Btn {
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    $border: 2px;
+    background-clip: padding-box; /* !importanté */
+    border: solid $border transparent; /* !importanté */
+    height: 34px;
+    width: 34px;
+    &:hover {
+      background: $bgPurple;
+      border: solid 0px transparent;
+
+      &::before {
+        margin: 0;
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      margin: -5px; /* !importanté */
+      border-radius: inherit; /* !importanté */
+      background: linear-gradient(115.31deg, #ce7cff 0%, #734bff 100%);
+      border: 2px solid;
+    }
+  }
+
+  .dark__ProfileHeader {
+    @include flexRowTop();
+    border-bottom: 2px solid $bgStroke;
+
+    .dark__ProfileGroup {
+      padding-right: 14px;
+      width: calc(18% - 7px);
+      border-right: 2px solid $bgStroke;
+      padding-bottom: 16px;
+
+      //height: calc(100vh - 42px);
+      @include flexRowSpaceBetween();
+
+      .__ProfileGroup__title {
+        @include flexColumn();
+        gap: 2px;
+        padding-left: 23px;
+      }
+    }
+
+    .light__ProfileGroup {
+      padding-right: 14px;
+      width: calc(18% - 7px);
+      border-right: 2px solid $bgStroke;
+      padding-bottom: 16px;
+
+      //height: calc(100vh - 42px);
+      @include flexRowSpaceBetween();
+
+      .__ProfileGroup__title {
+        @include flexColumn();
+        gap: 2px;
+        padding-left: 23px;
+      }
+    }
+
+    .ProfileContent__header {
+      @include flexRowSpaceBetween();
+      flex: 1;
+      margin: 0 22px;
+      padding-bottom: 16px;
+
+      .Profile_header_left {
+        @include flexRowTop();
+        gap: 16px;
+
+        .profile_header_title {
+          @include flexColumn();
+          gap: 2px;
+        }
+
+        .profile_header_export_import {
+          @include flexRowTop();
+          gap: 6px;
+          button {
+            &:hover {
+              .graySvg {
+                display: none;
+              }
+              .hoverSvg {
+                display: block;
+                width: 100%;
+              }
+            }
+            .hoverSvg {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .Profile_header_right {
+        @include flexRowSpaceBetween();
+        gap: 40px;
+
+        .profile_header_right_tab {
+          @include flexRowTop();
+          gap: 17px;
+
+          .dark__profile {
+            @include font12();
+            color: $gray;
+            cursor: pointer;
+          }
+
+          .dark__account {
+            @include font12();
+            color: $gray;
+            cursor: pointer;
+          }
+
+          .activeAccount,
+          .activeProfile {
+            color: white;
+            //border-bottom: 2px solid $accent;
+          }
+        }
+
+        .profile_header_right_buttons {
+          @include flexRowTop();
+          gap: 12px;
+
+          .add__delayGroup {
+            @include flexRowTop();
+            gap: 6px;
+          }
+
+          .import__export {
+            @include flexRowTop();
+            gap: 6px;
+
+            .__deleteAll {
+              @include font10();
+              color: white;
+              @include flexRowTop();
+              padding: 11px 22px;
+              width: 100%;
+              gap: 2px;
+              &:hover {
+                background: $bgRed;
+              }
+            }
+            .proxyDelete {
+              $border: 3px;
+              background-clip: padding-box; /* !importanté */
+              border: solid $border #ff8990; /* !importanté */
+              color: $lightBlack;
+            }
+            .__testAll {
+              @include font10();
+              color: $lightBlack;
+              @include flexRowTop();
+              padding: 11px 22px;
+              width: 100%;
+              gap: 6px;
+              &:hover {
+                background: $bgStrongGreen;
+                border: solid 0px transparent;
+              }
+
+              &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+                margin: -5px;
+                border-radius: inherit;
+                background: $bgStrongGreen;
+                border: 2px solid;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .light__ProfileHeader {
+    @include flexRowTop();
+    border-bottom: $borderLight;
+
+    .light__ProfileGroup {
+      padding-right: 14px;
+      width: calc(18% - 7px);
+      border-right: $borderLight;
+      padding-bottom: 16px;
+
+      //height: calc(100vh - 42px);
+      @include flexRowSpaceBetween();
+
+      .__ProfileGroup__title {
+        @include flexColumn();
+        gap: 2px;
+        padding-left: 23px;
+      }
+      .light__createGroup {
+        .light__createBtn {
+          background: $bgLight;
+          border: $borderLight;
+        }
+      }
+    }
+    .ProfileContent__header {
+      @include flexRowSpaceBetween();
+      flex: 1;
+      margin: 0 22px;
+      padding-bottom: 16px;
+
+      .Profile_header_left {
+        @include flexRowTop();
+        gap: 16px;
+
+        .profile_header_title {
+          @include flexColumn();
+          gap: 2px;
+        }
+
+        .profile_header_export_import {
+          @include flexRowTop();
+          gap: 6px;
+          button {
+            background: $bgLight;
+            border: $borderLight;
+            &:hover {
+              .graySvg {
+                display: none;
+              }
+              .hoverSvg {
+                display: block;
+                width: 100%;
+              }
+            }
+            .hoverSvg {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .Profile_header_right {
+        @include flexRowSpaceBetween();
+        gap: 40px;
+
+        .profile_header_right_tab {
+          @include flexRowTop();
+          gap: 17px;
+
+          .light__profile {
+            @include font12();
+            color: $gray;
+            cursor: pointer;
+          }
+
+          .light__account {
+            @include font12();
+            color: $gray;
+            cursor: pointer;
+          }
+
+          .activeAccount,
+          .activeProfile {
+            color: $lightBlack;
+            //border-bottom: 2px solid $accent;
+          }
+        }
+
+        .profile_header_right_buttons {
+          @include flexRowTop();
+          gap: 12px;
+          button {
+            background: $bgLight;
+          }
+          .add__delayGroup {
+            @include flexRowTop();
+            gap: 6px;
+            .create_Btn {
+              border: solid 2px #e3b4ff;
+              &:hover {
+                background: $bgPurple;
+                border: solid 0px transparent;
+
+                &::before {
+                  margin: 0;
+                }
+              }
+
+              &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+                margin: -5px; /* !importanté */
+                border-radius: inherit; /* !importanté */
+                background: linear-gradient(115.31deg, #ce7cff 0%, #734bff 100%);
+                border: 2px solid;
+              }
+            }
+          }
+
+          .import__export {
+            @include flexRowTop();
+            gap: 6px;
+
+            .__deleteAll {
+              @include font10();
+              color: $lightBlack;
+              @include flexRowTop();
+              padding: 11px 22px;
+              width: 100%;
+              gap: 2px;
+              border: solid 3px #ff8990;
+
+              &:hover {
+                background: $bgRed;
+              }
+            }
+            .proxyDelete {
+              $border: 3px;
+              background-clip: padding-box; /* !importanté */
+              border: solid $border #ff8990; /* !importanté */
+              color: $lightBlack;
+            }
+            .__testAll {
+              @include font10();
+              color: $lightBlack;
+              @include flexRowTop();
+              padding: 11px 22px;
+              width: 100%;
+              gap: 6px;
+              &:hover {
+                background: $bgStrongGreen;
+                border: solid 0px transparent;
+              }
+
+              &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+                margin: -5px;
+                border-radius: inherit;
+                background: $bgStrongGreen;
+                border: 2px solid;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .__ProfileContent {
+    @include flexRowTop();
+    height: calc(100vh - 78px);
+
+    .dark__ProfileLeft {
+      width: calc(18% - 7px);
+      border-right: 2px solid $bgStroke;
+      height: calc(100vh - 85px);
+      padding-top: 7px;
+      padding-right: 14px;
+
+      .ProfileGroup {
+        height: 100%;
+        max-height: 300px;
+        overflow-y: scroll;
+        margin-right: -14px;
+
+        .ProfileGroup__content {
+          margin-right: 14px;
+
+          &:hover {
+            .dark__name {
+              color: $accent;
+            }
+          }
+
+          .darkProfilesGroup {
+            @include flexRowSpaceBetween();
+            padding: 11px 14px 11px 22px;
+
+            .dark__ProfileGroup__left {
+              @include flexColumn();
+              gap: 6px;
+
+              .dark__ProfileGroup__header {
+                @include flexColumn();
+                gap: 3px;
+
+                .dark__name {
+                  @include font12();
+                  color: white;
+                }
+
+                .dark__subtitle {
+                  @include font10();
+                  color: $gray;
+                }
+              }
+              .dark__ProxyGroup__header {
+                @include flexColumn();
+                gap: 3px;
+
+                .dark__name {
+                  @include font12();
+                  color: white;
+                }
+
+                .dark__subtitle {
+                  @include font10();
+                  color: $gray;
+                }
+              }
+
+              .dark__ProfileGroup__content {
+                @include flexRowSpaceBetween();
+                gap: 3px;
+
+                img {
+                  width: 10px;
+                  height: 10px;
+                }
+
+                span {
+                  @include fontNine();
+                  color: white;
+                }
+
+                .Profiles__cart__part {
+                  @include flexRowSpaceBetween();
+                  background: #23444e;
+                  border-radius: 1px;
+                  padding: 2px 6px;
+                  opacity: 0.2;
+                  z-index: 1;
+                  gap: 9px;
+
+                  img {
+                    z-index: 1000;
+                  }
+                }
+
+                .Profiles__success__part {
+                  @include flexRowSpaceBetween();
+                  background: #2d4933;
+                  opacity: 0.2;
+                  border-radius: 1px;
+                  padding: 2px 6px;
+                  gap: 9px;
+                }
+
+                .Profiles__decline__part {
+                  @include flexRowSpaceBetween();
+                  background: #492f35;
+                  opacity: 0.2;
+                  border-radius: 1px;
+                  padding: 2px 6px;
+                  gap: 9px;
+                }
+              }
+            }
+
+            .dark__ProfileGroup__right {
+              img {
+                width: 14px;
+                height: 14px;
+              }
+            }
+          }
+        }
+
+        .darkactiveProfileGroup {
+          background: $bgThird;
+          border: $borderDark;
+          border-radius: 0px 5px 5px 0px;
+        }
+
+        .lightactiveProfileGroup {
+          background: #ffffff;
+          border: $borderLight;
+          border-radius: 0px 5px 5px 0px;
+        }
+      }
+    }
+
+    .dark_Profiles {
+      flex: 1;
+      height: 100%;
+      position: relative;
+
+      .Profile__content {
+        @include flexColumn();
+        height: 100%;
+        max-height: 320px;
+        overflow-y: scroll;
+        gap: 9px;
+        padding: 17px 29px;
+
+        .Profile__content__body {
+          @include flexRowTop();
+          flex-wrap: wrap;
+          gap: 13px;
+
+          .profileItem {
+            border: $border-light;
+            border-radius: 5px;
+            width: calc(25% - 12px);
+            cursor: pointer;
+
+            .ItemHeader {
+              @include flexRowSpaceBetween();
+              background: $bgThird;
+              padding: 11px 19px;
+              border-radius: 5px 5px 0 0;
+
+              .dark__name {
+                @include font12();
+                color: white;
+              }
+
+              .itemRight {
+                @include flexRowTop();
+                gap: 4px;
+
+                span {
+                  @include font10();
+                  color: #50e4f8;
+                }
+              }
+            }
+
+            .ItemContent {
+              .cardTitle {
+                @include font10();
+                color: $accent;
+                padding: 11px 19px;
+                display: flex;
+              }
+
+              .borders {
+                width: 100%;
+                border-bottom: 2px solid #ffffff33;
+              }
+
+              .dark__phone {
+                @include font10();
+                color: white;
+                padding: 11px 19px;
+                display: flex;
+              }
+            }
+
+            .Item__Footer {
+              @include flexRowSpaceBetween();
+              padding: 11px 19px;
+              background: $bgThird;
+              border-radius: 0 0 5px 5px;
+
+              .dark__email {
+                @include font10();
+                color: #ffffffcc;
+              }
+
+              .Edit__Delete {
+                @include flexRowTop();
+                gap: 11px;
+              }
+            }
+          }
+          .accountItem {
+            border: $border-light;
+            border-radius: 5px;
+            width: calc(33% - 8px);
+            cursor: pointer;
+
+            .ItemHeader {
+              @include flexRowSpaceBetween();
+              background: $bgThird;
+              padding: 11px 19px;
+              border-radius: 5px 5px 0 0;
+
+              .dark__name {
+                @include font12();
+                color: white;
+              }
+
+              .itemRight {
+                @include flexRowTop();
+                gap: 4px;
+
+                span {
+                  @include font10();
+                  color: #50e4f8;
+                }
+              }
+            }
+
+            .ItemContent {
+              .cardTitle {
+                @include font10();
+                color: $accent;
+                padding: 11px 19px;
+                display: flex;
+              }
+
+              .borders {
+                width: 100%;
+                border-bottom: 2px solid #ffffff33;
+              }
+
+              .dark__phone {
+                @include font10();
+                color: white;
+                padding: 11px 19px;
+                display: flex;
+              }
+            }
+
+            .Item__Footer {
+              @include flexRowSpaceBetween();
+              padding: 11px 19px;
+              background: $bgThird;
+              border-radius: 0 0 5px 5px;
+
+              .dark__email {
+                @include font10();
+                color: $accent;
+              }
+
+              .Edit__Delete {
+                @include flexRowTop();
+                gap: 11px;
+              }
+            }
+          }
+
+          .activeProfileItem {
+            .ItemHeader {
+              background: #ffffff1a;
+
+              .itemRight {
+                span {
+                  color: white;
+                }
+              }
+            }
+
+            .ItemContent {
+              background: #212121;
+            }
+
+            .Item__Footer {
+              background: #ffffff1a;
+            }
+          }
+        }
+      }
+    }
+  }
+  .__ProfileContent {
+    @include flexRowTop();
+    height: calc(100vh - 78px);
+
+    .light__ProfileLeft {
+      width: calc(18% - 7px);
+      border-right: $borderLight;
+      height: calc(100vh - 85px);
+      padding-top: 7px;
+      padding-right: 14px;
+
+      .ProfileGroup {
+        height: 100%;
+        max-height: 300px;
+        overflow-y: scroll;
+        margin-right: -14px;
+
+        .ProfileGroup__content {
+          margin-right: 14px;
+
+          &:hover {
+            .dark__name {
+              color: $accent;
+            }
+          }
+
+          .lightProfilesGroup {
+            @include flexRowSpaceBetween();
+            padding: 11px 14px 11px 22px;
+
+            .light__ProfileGroup__left {
+              @include flexColumn();
+              gap: 6px;
+
+              .light__ProfileGroup__header {
+                @include flexColumn();
+                gap: 3px;
+
+                .light__name {
+                  @include font12();
+                  color: $lightBlack;
+                }
+
+                .light__subtitle {
+                  @include font10();
+                  color: $gray;
+                }
+              }
+
+              .light__ProfileGroup__content {
+                @include flexRowSpaceBetween();
+                gap: 3px;
+
+                img {
+                  width: 10px;
+                  height: 10px;
+                }
+
+                span {
+                  @include fontNine();
+                  color: white;
+                }
+
+                .Profiles__cart__part {
+                  @include flexRowSpaceBetween();
+                  background: #23444e;
+                  border-radius: 1px;
+                  padding: 2px 6px;
+                  opacity: 0.2;
+                  z-index: 1;
+                  gap: 9px;
+
+                  img {
+                    z-index: 1000;
+                  }
+                }
+
+                .Profiles__success__part {
+                  @include flexRowSpaceBetween();
+                  background: #2d4933;
+                  opacity: 0.2;
+                  border-radius: 1px;
+                  padding: 2px 6px;
+                  gap: 9px;
+                }
+
+                .Profiles__decline__part {
+                  @include flexRowSpaceBetween();
+                  background: #492f35;
+                  opacity: 0.2;
+                  border-radius: 1px;
+                  padding: 2px 6px;
+                  gap: 9px;
+                }
+              }
+            }
+
+            .light__ProfileGroup__right {
+              img {
+                width: 14px;
+                height: 14px;
+              }
+            }
+          }
+        }
+
+        .darkactiveProfileGroup {
+          background: $bgThird;
+          border: $borderDark;
+          border-radius: 0px 5px 5px 0px;
+        }
+
+        .lightactiveProfileGroup {
+          background: #ffffff;
+          border: $borderLight;
+          border-radius: 0px 5px 5px 0px;
+        }
+      }
+    }
+
+    .light_Profiles {
+      flex: 1;
+      height: 100%;
+      position: relative;
+
+      .Profile__content {
+        @include flexColumn();
+        height: 100%;
+        max-height: 320px;
+        overflow-y: scroll;
+        gap: 9px;
+        padding: 17px 29px;
+
+        .Profile__content__body {
+          @include flexRowTop();
+          flex-wrap: wrap;
+          gap: 13px;
+
+          .profileItem {
+            border: $borderLight;
+            border-radius: 5px;
+            width: calc(25% - 14px);
+            background: $bgLight;
+            cursor: pointer;
+
+            .ItemHeader {
+              @include flexRowSpaceBetween();
+              background: #ffffff;
+              padding: 11px 19px;
+              border-radius: 5px 5px 0 0;
+
+              .light__name {
+                @include font12();
+                color: $lightBlack;
+              }
+
+              .itemRight {
+                @include flexRowTop();
+                gap: 4px;
+
+                span {
+                  @include font10();
+                  color: #50e4f8;
+                }
+              }
+            }
+
+            .ItemContent {
+              .cardTitle {
+                @include font10();
+                color: $accent;
+                padding: 11px 19px;
+                display: flex;
+              }
+
+              .borders {
+                width: 100%;
+                border-bottom: $borderLight;
+              }
+
+              .light__phone {
+                @include font10();
+                color: #787878b2;
+                padding: 11px 19px;
+                display: flex;
+              }
+            }
+
+            .Item__Footer {
+              @include flexRowSpaceBetween();
+              padding: 11px 19px;
+              background: #ffffff;
+              border-radius: 0 0 5px 5px;
+
+              .light__email {
+                @include font10();
+                color: #787878b2;
+              }
+
+              .Edit__Delete {
+                @include flexRowTop();
+                gap: 11px;
+              }
+            }
+          }
+          .accountItem {
+            border: $borderLight;
+            border-radius: 5px;
+            width: calc(33% - 10px);
+            cursor: pointer;
+
+            .ItemHeader {
+              @include flexRowSpaceBetween();
+              background: #ffffff;
+              padding: 11px 19px;
+              border-radius: 5px 5px 0 0;
+
+              .light__name {
+                @include font12();
+                color: $lightBlack;
+              }
+
+              .itemRight {
+                @include flexRowTop();
+                gap: 4px;
+
+                span {
+                  @include font10();
+                  color: #50e4f8;
+                }
+              }
+            }
+
+            .ItemContent {
+              background: #f0f2f9;
+              .cardTitle {
+                @include font10();
+                color: $accent;
+                padding: 11px 19px;
+                display: flex;
+              }
+
+              .borders {
+                width: 100%;
+                border-bottom: $borderLight;
+              }
+
+              .light__phone {
+                @include font10();
+                color: #787878b2;
+                padding: 11px 19px;
+                display: flex;
+              }
+            }
+
+            .Item__Footer {
+              @include flexRowSpaceBetween();
+              padding: 11px 19px;
+              background: #ffffff;
+              border-radius: 0 0 5px 5px;
+
+              .light__email {
+                @include font10();
+                color: #787878b2;
+              }
+
+              .Edit__Delete {
+                @include flexRowTop();
+                gap: 11px;
+              }
+            }
+          }
+
+          .activeProfileItem {
+            background: #212121;
+            .ItemHeader {
+              background: #ffffff33;
+              .light__name {
+                color: white;
+              }
+              .itemRight {
+                span {
+                  color: $lightBlack;
+                }
+              }
+            }
+
+            .ItemContent {
+              background: #212121;
+              .borders {
+                width: 100%;
+                border-bottom: 2px solid #ffffff33;
+              }
+              .light__phone {
+                color: #787878b2;
+              }
+            }
+
+            .Item__Footer {
+              background: #ffffff33;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .Profile__content__footer {
+    @include flexRowTop();
+    position: absolute;
+    top: 89%;
+    left: 39%;
+
+    .footerBtn {
+      @include flexRowTop();
+      margin: 0 auto;
+      gap: 10px;
+
+      button {
+        @include flexRowTop();
+        border-radius: 5px;
+        width: 110px;
+        gap: 5px;
+        position: relative;
+        box-sizing: border-box;
+        background-clip: padding-box;
+        border: solid 2px transparent;
+
+        span {
+          color: white;
+          @include font10();
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .__startAll {
+        &:hover {
+          background: $bgGreen;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          margin: -5px;
+          border-radius: inherit;
+          background: linear-gradient(115.31deg, #74ff79 0%, #60ffbc 100%);
+          border: 2px solid;
+        }
+      }
+
+      .__stopAll {
+        &:hover {
+          background: $bgRed;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          margin: -5px;
+          border-radius: inherit;
+          border: 2px solid;
+          background: linear-gradient(115.31deg, #ff8990 0%, #ff607c 100%);
+        }
+      }
+
+      .__editAll {
+        &:hover {
+          background: $bgBlue;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          margin: -5px;
+          border-radius: inherit;
+          border: 2px solid;
+          background: linear-gradient(115.31deg, #50e4f8 0%, #00c2ff 100%);
+        }
+      }
+
+      .__deleteAll {
+        &:hover {
+          background: $bgRed;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          margin: -5px;
+          border-radius: inherit;
+          background: linear-gradient(115.31deg, #ff8990 0%, #ff607c 100%);
+          border: 2px solid;
+        }
+      }
+    }
+  }
+
+  .dark__ProfileLeft {
+    @include flexColumn();
+    gap: 7px;
+  }
+
+  .light__ProfileLeft {
+    @include flexColumn();
+    gap: 7px;
+  }
+
+  .dark__Profiles {
+    flex: 1;
+    margin: 0 22px;
+
+    .Profile__header {
+    }
+  }
+
+  .light__Profiles {
+    flex: 1;
+    margin: 0 22px;
+
+    .Profile__header {
+    }
+  }
+}

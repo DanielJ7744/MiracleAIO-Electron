@@ -1,0 +1,225 @@
+@import './variables.scss';
+
+.darkCheckout {
+  background: $bgSecond;
+  border-radius: $borderRadius10;
+  border: $borderDark;
+  position: relative;
+  @include flexColumn();
+
+  .darkCheckHeader {
+    @include flexRowSpaceBetween();
+    padding: 10px 23px;
+    background: $bgThird;
+
+    .MonthCheckout {
+      @include flexColumn();
+      gap: 4px;
+
+      .monthly__text {
+        @include fontNine();
+        color: $gray;
+      }
+
+      .darkLatestCheckout {
+        @include font12();
+        color: white;
+      }
+    }
+  }
+
+  .Content {
+    flex-grow: 2;
+    position: relative;
+    height: calc(100vh - 338px);
+    overflow-y: scroll;
+
+    .CheckContent {
+      @include flexColumn();
+      gap: 9px;
+      margin: 12px 14px;
+      height: 100%;
+
+      .checkoutData {
+        @include flexRowTop();
+        background: $bgThird;
+        padding: 9px 11px;
+        border-radius: 5px;
+        gap: 8px;
+
+        img {
+          max-width: 100%;
+          width: 7%;
+          margin-right: 17px;
+        }
+
+        .darkBrand,
+        .darkPrice {
+          @include fontNine();
+          color: $accent;
+        }
+
+        .lightBrand,
+        .lightPrice {
+          @include fontNine();
+          color: $lightaccent;
+        }
+
+        .darkProduct,
+        .darkProfiles {
+          @include font10();
+          color: white;
+        }
+
+        .lightProduct,
+        .lightProfiles {
+          @include font10();
+          color: $lightBlack;
+        }
+
+        .SiteName {
+          @include font10();
+          color: $bgWhite40;
+          width: 30%;
+          text-align: center;
+        }
+
+        .darkProfiles {
+          width: 20%;
+        }
+
+        .darkPrice {
+          width: 18%;
+          text-align: center;
+        }
+
+        .darkProduct {
+          width: 28%;
+        }
+      }
+    }
+  }
+
+  .clearList {
+    position: absolute;
+    top: 91%;
+    width: 100%;
+    left: 2%;
+
+    .clearBtn {
+      background: $bgRed;
+      padding: 12px 14px;
+      @include font10();
+      color: white;
+      border-radius: 5px;
+    }
+  }
+}
+.lightCheckout {
+  background: $bgLight;
+  border-radius: $borderRadius10;
+  border: $borderLight;
+  position: relative;
+  @include flexColumn();
+
+  .lightCheckHeader {
+    @include flexRowSpaceBetween();
+    padding: 10px 23px;
+    background: #ffffff;
+
+    .MonthCheckout {
+      @include flexColumn();
+      gap: 4px;
+
+      .monthly__text {
+        @include fontNine();
+        color: $gray;
+      }
+
+      .lightLatestCheckout {
+        @include font12();
+        color: #363636;
+      }
+    }
+  }
+
+  .Content {
+    flex-grow: 2;
+    position: relative;
+    height: calc(100vh - 338px);
+    overflow-y: scroll;
+
+    .CheckContent {
+      @include flexColumn();
+      gap: 9px;
+      margin: 12px 14px;
+      height: 100%;
+
+      .checkoutData {
+        @include flexRowTop();
+        background: #ffffff;
+        padding: 9px 11px;
+        border-radius: 5px;
+        gap: 8px;
+
+        img {
+          max-width: 100%;
+          width: 7%;
+          margin-right: 17px;
+        }
+        .lightBrand,
+        .lightPrice {
+          @include fontNine();
+          color: $lightaccent;
+        }
+
+        .darkProduct,
+        .darkProfiles {
+          @include font10();
+          color: white;
+        }
+
+        .lightProduct,
+        .lightProfiles {
+          @include font10();
+          color: $lightBlack;
+        }
+
+        .SiteName {
+          @include font10();
+          color: #00000066;
+          width: 30%;
+          text-align: center;
+        }
+
+        .darkProfiles {
+          width: 20%;
+        }
+
+        .darkPrice {
+          width: 18%;
+          text-align: center;
+        }
+
+        .darkProduct {
+          width: 28%;
+        }
+      }
+    }
+  }
+
+  .clearList {
+    position: absolute;
+    top: 91%;
+    width: 100%;
+    left: 2%;
+
+    .clearBtn {
+      background: $bgRed;
+      padding: 12px 14px;
+      @include font10();
+      color: white;
+      border-radius: 5px;
+    }
+  }
+}

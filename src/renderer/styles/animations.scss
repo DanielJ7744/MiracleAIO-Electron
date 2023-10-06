@@ -1,0 +1,155 @@
+.animation__wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 36px;
+  height: 36px;
+
+  &.small {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.task-animation {
+  width: 100%;
+  height: 100%;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-image: url('./animated-icons/tasks-default.svg');
+  left: 10px;
+  top: 10px;
+}
+
+.home-animation {
+  width: 100%;
+  height: 100%;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-image: url('animated-icons/home-default.svg');
+  left: 10px;
+  top: 10px;
+}
+.profile-animation{
+  width: 100%;
+  height: 100%;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-image: url('animated-icons/profiles-default.svg');
+  left: 10px;
+  top: 10px;
+}
+.settings-animation {
+  width: 100%;
+  height: 100%;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-image: url('animated-icons/settings-default.svg');
+  left: 10px;
+  top: 10px;
+}
+
+.harvesters-animation {
+  width: 70%;
+  height: 70%;
+  background-size: 100%, 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-image: url('./animated-icons/captcha.svg');
+  left: 20%;
+  top: 20%;
+}
+
+.settings-animation {
+  background-image: url('animated-icons/settings-default.svg');
+}
+
+.proxies-animation {
+  width: 100%;
+  height: 100%;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-image: url('animated-icons/proxies-default.svg');
+  left: 10px;
+  top: 10px;
+}
+.profiles-animation {
+  width: 100%;
+  height: 100%;
+  background-size: auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-image: url('animated-icons/profiles-dark.svg');
+  left: 10px;
+  top: 10px;
+}
+.deactivate-animation {
+  width: 100%;
+  height: 100%;
+  background-size: 100%, 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-image: url('./animated-icons/deactivate-ns.svg');
+  left: 0;
+  top: 0;
+}
+
+.deactivate-animation:hover {
+  width: 1200%;
+  background-image: url('./animated-icons/deactivate.svg');
+  animation-name: animated;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(11);
+  animation-iteration-count: infinite;
+  cursor: pointer;
+}
+
+.deactivate-animation--active {
+  background-image: url('./animated-icons/deactivate-s.svg');
+}
+
+.export-animation {
+  width: 100%;
+  height: 100%;
+  background-size: 100%, 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-image: url('./animated-icons/export-ns.svg');
+  left: 0;
+  top: 0;
+}
+
+.export-animation:hover {
+  width: 1200%;
+  background-image: url('./animated-icons/export.svg');
+  animation-name: animated;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(11);
+  animation-iteration-count: infinite;
+  cursor: pointer;
+}
+
+.import-animation {
+  width: 100%;
+  height: 100%;
+  background-size: 100%, 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-image: url('./animated-icons/import-ns.svg');
+  left: 0;
+  top: 0;
+}
+
+.import-animation:hover {
+  width: 1200%;
+  background-image: url('./animated-icons/import.svg');
+  animation-name: animated;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(11);
+  animation-iteration-count: infinite;
+  cursor: pointer;
+}

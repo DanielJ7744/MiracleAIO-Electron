@@ -1,0 +1,246 @@
+@import './variables.scss';
+
+.darkTotal__Wrapper {
+  gap: 8px;
+  background: $bgSecond;
+  border-radius: $borderRadius10;
+  border: $borderDark;
+  padding: 13px 1%;
+  flex-wrap: wrap;
+  display: flex;
+  .total__checkout {
+    @include flexColumnTop();
+    justify-content: center;
+    text-align: center;
+    background: $bgThird;
+    border: $borderDark;
+    border-radius: $borderRadius5;
+    flex: 1;
+    .checkout__text {
+      @include font12();
+      color: $accent;
+    }
+
+    .checkout__num {
+      @include flexRowTop();
+      padding: 20px 0 15px 0px;
+    }
+    .total__chart__part:hover {
+      background: $bgPurple;
+      width: 100%;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+  }
+
+  .total__carted {
+    @include flexColumnTop();
+    justify-content: center;
+    text-align: center;
+    background: $bgThird;
+    border: $borderDark;
+    border-radius: $borderRadius5;
+    flex: 1;
+    .carted__text {
+      @include font12();
+      color: $blue;
+    }
+
+    .carted__num {
+      @include flexRowTop();
+      padding: 20px 0 15px 0px;
+    }
+    .total__chart__part:hover {
+      background: $bgBlue;
+      width: 100%;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+  }
+
+  .total__declines {
+    @include flexColumnTop();
+    justify-content: center;
+    text-align: center;
+    background: $bgThird;
+    border: $borderDark;
+    border-radius: $borderRadius5;
+    flex: 1;
+    .decline__text {
+      @include font12();
+      color: $red;
+    }
+
+    .decline__num {
+      @include flexRowTop();
+      padding: 20px 0 15px 0px;
+    }
+    .total__chart__part:hover {
+      background: $bgRed;
+      width: 100%;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+  }
+
+  .total__text {
+    @include fontNine();
+    color: $gray;
+    padding: 11px 53px 4px 53px;
+  }
+
+  .interval__border {
+    height: 2px;
+    border-radius: $borderRadius5;
+    width: 100%;
+    background: $bgStroke;
+    margin: 11px 0 0 0;
+  }
+
+  .numbers {
+    @include flexRowTop();
+  }
+}
+.lightTotal__Wrapper {
+  gap: 8px;
+  background: $bgLight;
+  border-radius: $borderRadius10;
+  border: $borderLight;
+  padding: 13px 1%;
+  flex-wrap: wrap;
+  display: flex;
+  .total__checkout {
+    @include flexColumnTop();
+    justify-content: center;
+    text-align: center;
+    background: #ffffff;
+    border: $borderLight;
+    border-radius: $borderRadius5;
+    flex: 1;
+    .checkout__text {
+      @include font12();
+      color: $accent;
+    }
+
+    .checkout__num {
+      @include flexRowTop();
+      padding: 20px 0 15px 0px;
+    }
+    .total__chart__part:hover {
+      background: $bgPurple;
+      width: 100%;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+  }
+
+  .total__carted {
+    @include flexColumnTop();
+    justify-content: center;
+    text-align: center;
+    background: #ffffff;
+    border: $borderLight;
+    border-radius: $borderRadius5;
+    flex: 1;
+    .carted__text {
+      @include font12();
+      color: $blue;
+    }
+
+    .carted__num {
+      @include flexRowTop();
+      padding: 20px 0 15px 0px;
+    }
+    .total__chart__part:hover {
+      background: $bgBlue;
+      width: 100%;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+  }
+
+  .total__declines {
+    @include flexColumnTop();
+    justify-content: center;
+    text-align: center;
+    background: #ffffff;
+    border: $borderLight;
+    border-radius: $borderRadius5;
+    flex: 1;
+    .decline__text {
+      @include font12();
+      color: $red;
+    }
+
+    .decline__num {
+      @include flexRowTop();
+      padding: 20px 0 15px 0px;
+    }
+    .total__chart__part:hover {
+      background: $bgRed;
+      width: 100%;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+  }
+
+  .total__text {
+    @include fontNine();
+    color: $gray;
+    padding: 11px 53px 4px 53px;
+  }
+
+  .interval__border {
+    height: 2px;
+    border-radius: $borderRadius5;
+    width: 100%;
+    background: #ededed;
+    margin: 11px 0 0 0;
+  }
+
+  .numbers {
+    @include flexRowTop();
+  }
+  .total__checkout:hover {
+    .total__text {
+      color: $bgBlack;
+    }
+  }
+  .total__carted:hover {
+    .total__text {
+      color: $bgBlack;
+    }
+  }
+
+  .total__declines:hover {
+    .total__text {
+      color: $bgBlack;
+    }
+  }
+}
+.total__chart__part {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  @include flexColumnTop();
+  .darkTrailColor {
+    color: $bgSecond;
+  }
+}
+.total__checkout:hover {
+  .total__text {
+    color: white;
+  }
+}
+
+.total__carted:hover {
+  .total__text {
+    color: white;
+  }
+}
+
+.total__declines:hover {
+  .total__text {
+    color: white;
+  }
+}

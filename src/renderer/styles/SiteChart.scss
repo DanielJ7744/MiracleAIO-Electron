@@ -1,0 +1,84 @@
+@import './variables.scss';
+
+.darkSite {
+  @include flexColumn();
+  background: $bgSecond;
+  border-radius: $borderRadius10;
+  border: $borderDark;
+
+  .Sites {
+    @include flexRowTop();
+    padding: 21px 3%;
+    gap: 6px;
+
+    .darksite__list {
+      flex: 1;
+      background: $bgThird;
+      border: $borderDark;
+      @include flexColumn();
+      border-radius: $borderRadius10;
+      padding: 10px 13px;
+      .darksiteName {
+        @include fontNine();
+        color: white;
+      }
+      .checkout_num {
+        @include flexRowSpaceBetween();
+        .darkcheckouts {
+          color: $bgWhite40;
+          @include fontNine();
+        }
+
+        .darkcheckoutNum {
+          color: white;
+          @include font12();
+        }
+      }
+    }
+  }
+  .chartPart {
+    height: 161px;
+    max-height: 428px;
+  }
+}
+.lightSite {
+  @include flexColumn();
+  background: $bgLight;
+  border-radius: $borderRadius10;
+  border: $borderLight;
+
+  .Sites {
+    @include flexRowTop();
+    padding: 21px 3%;
+    gap: 6px;
+
+    .lightsite__list {
+      flex: 1;
+      background: #ffffff;
+      border: $borderLight;
+      @include flexColumn();
+      border-radius: $borderRadius10;
+      padding: 10px 13px;
+
+      .lightsiteName {
+        @include fontNine();
+        color: #363636;
+      }
+      .checkout_num {
+        @include flexRowSpaceBetween();
+      }
+      .lightcheckouts {
+        color: #00000066;
+        @include fontNine();
+      }
+      .lightcheckoutNum {
+        color: #363636;
+        @include font12();
+      }
+    }
+  }
+}
+.chartPart {
+  height: 161px;
+  max-height: 428px;
+}

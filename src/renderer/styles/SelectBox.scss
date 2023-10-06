@@ -1,0 +1,8 @@
+@import 'variables';
+select {
+  @include fontNine();
+  color: $gray;
+  padding: 12px 100px 12px 18px;
+  outline: none;
+  border-radius: 5px;
+}

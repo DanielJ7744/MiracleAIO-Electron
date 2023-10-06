@@ -1,0 +1,586 @@
+@import './variables';
+
+.Proxy {
+  @include flexColumn();
+  width: 100%;
+  position: relative;
+
+  .dark__groupTitle {
+    @include font12();
+    color: white;
+  }
+
+  .dark__subTitle {
+    @include fontNine();
+    color: $gray;
+  }
+  .light__groupTitle {
+    @include font12();
+    color: $lightBlack;
+  }
+
+  .light__subTitle {
+    @include fontNine();
+    color: $gray;
+  }
+  button {
+    background: $bgSecond;
+    border-radius: 5px;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+  }
+  ._createBtn {
+    background: $bgPurple;
+  }
+  .dark__createBtn {
+    width: 36px;
+    height: 36px;
+    &:hover {
+      background: $bgPurple;
+    }
+  }
+  .create_Btn {
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    $border: 2px;
+    background-clip: padding-box; /* !importanté */
+    border: solid $border transparent; /* !importanté */
+    height: 40px;
+    width: 40px;
+    &:hover {
+      background: $bgPurple;
+      border: solid 0px transparent;
+
+      &::before {
+        margin: 0;
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      margin: -5px; /* !importanté */
+      border-radius: inherit; /* !importanté */
+      background: linear-gradient(115.31deg, #ce7cff 0%, #734bff 100%);
+      border: 2px solid;
+    }
+  }
+
+  .dark__ProxyHeader {
+    @include flexRowTop();
+    border-bottom: 2px solid $bgStroke;
+
+    .dark__ProxyGroup {
+      padding-right: 14px;
+      width: calc(18% - 7px);
+      border-right: 2px solid $bgStroke;
+      padding-bottom: 16px;
+      @include flexRowSpaceBetween();
+
+      .__ProxyGroup__title {
+        @include flexColumn();
+        gap: 2px;
+        padding-left: 23px;
+      }
+    }
+
+    .ProxyContent__header {
+      @include flexRowSpaceBetween();
+      flex: 1;
+      margin: 0 22px;
+      padding-bottom: 16px;
+
+      .Proxy_header_left {
+        @include flexRowTop();
+        gap: 16px;
+
+        .proxy_header_title {
+          @include flexColumn();
+          gap: 2px;
+        }
+
+        .proxy_header_test_delete {
+          @include flexRowTop();
+          gap: 6px;
+          button {
+            width: 36px;
+            height: 36px;
+            &:hover {
+              .graySvg {
+                display: none;
+              }
+              .hoverSvg {
+                display: block;
+                width: 100%;
+              }
+            }
+            .hoverSvg {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .Proxy_header_right {
+        @include flexRowSpaceBetween();
+        gap: 40px;
+
+        .proxy_header_right_buttons {
+          @include flexRowTop();
+          gap: 12px;
+
+          .add__proxy {
+            @include flexRowTop();
+            gap: 6px;
+          }
+
+          .test__delete {
+            @include flexRowTop();
+            gap: 6px;
+
+            .__deleteAll {
+              @include font10();
+              color: white;
+              @include flexRowTop();
+              padding: 11px 22px;
+              width: 100%;
+              gap: 2px;
+              &:hover {
+                background: $bgRed;
+              }
+            }
+            .proxyDelete {
+              $border: 2px;
+              background-clip: padding-box; /* !importanté */
+              border: solid $border #ff8990; /* !importanté */
+            }
+            .__testAll {
+              @include font10();
+              color: white;
+              @include flexRowTop();
+              padding: 11px 22px;
+              width: 100%;
+              gap: 6px;
+              &:hover {
+                background: $bgStrongGreen;
+              }
+
+              &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+                margin: -2px;
+                border-radius: inherit;
+                background: $bgStrongGreen;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .light__ProxyHeader {
+    @include flexRowTop();
+    border-bottom: $borderLight;
+    .light__ProxyGroup {
+      padding-right: 14px;
+      width: calc(18% - 7px);
+      border-right: $borderLight;
+      padding-bottom: 16px;
+
+      //height: calc(100vh - 42px);
+      @include flexRowSpaceBetween();
+
+      .__ProxyGroup__title {
+        @include flexColumn();
+        gap: 2px;
+        padding-left: 23px;
+      }
+      .light__createGroup {
+        .light__createBtn {
+          width: 36px;
+          height: 36px;
+          background: #f0f2f9;
+          &:hover {
+            background: $bgPurple;
+          }
+        }
+      }
+    }
+
+    .ProxyContent__header {
+      @include flexRowSpaceBetween();
+      flex: 1;
+      margin: 0 22px;
+      padding-bottom: 16px;
+
+      .Proxy_header_left {
+        @include flexRowTop();
+        gap: 16px;
+
+        .proxy_header_title {
+          @include flexColumn();
+          gap: 2px;
+        }
+
+        .proxy_header_test_delete {
+          @include flexRowTop();
+          gap: 6px;
+          button {
+            width: 36px;
+            height: 36px;
+            background: $bgLight;
+            &:hover {
+              .graySvg {
+                display: none;
+              }
+              .hoverSvg {
+                display: block;
+                width: 100%;
+              }
+            }
+            .hoverSvg {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .Proxy_header_right {
+        @include flexRowSpaceBetween();
+        gap: 40px;
+
+        .proxy_header_right_buttons {
+          @include flexRowTop();
+          gap: 12px;
+
+          .add__proxy {
+            @include flexRowTop();
+            gap: 6px;
+            .create_Btn {
+              background: $bgLight;
+              $border: 3px;
+              border: solid $border #e3b4ff; /* !importanté */
+              background: $bgLight;
+              color: $lightBlack;
+              &:hover {
+                background: $bgPurple;
+                border: solid 0px transparent;
+
+                &::before {
+                  margin: 0;
+                }
+              }
+
+              &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+                margin: -5px; /* !importanté */
+                border-radius: inherit; /* !importanté */
+                background: linear-gradient(115.31deg, #ce7cff 0%, #734bff 100%);
+                border: 2px solid;
+              }
+            }
+          }
+
+          .test__delete {
+            @include flexRowTop();
+            gap: 6px;
+
+            .__deleteAll {
+              @include font10();
+              color: $lightBlack;
+              @include flexRowTop();
+              padding: 11px 22px;
+              width: 100%;
+              gap: 2px;
+              background: $bgLight;
+
+              &:hover {
+                background: $bgRed;
+              }
+            }
+            .proxyDelete {
+              $border: 3px;
+              background-clip: padding-box; /* !importanté */
+              border: solid $border #ff8990; /* !importanté */
+            }
+            .__testAll {
+              @include font10();
+              @include flexRowTop();
+              padding: 11px 22px;
+              width: 100%;
+              gap: 6px;
+              box-sizing: border-box;
+              $border: 3px;
+              background-clip: padding-box; /* !importanté */
+              border: solid $border #00ae31; /* !importanté */
+              background: $bgLight;
+              color: $lightBlack;
+              &:hover {
+                background: $bgStrongGreen;
+                border: solid 3px transparent;
+              }
+
+              &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: -1;
+                margin: -2px;
+                border-radius: inherit;
+                background: $bgStrongGreen;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .__ProxyContent {
+    @include flexRowTop();
+    height: calc(100vh - 78px);
+
+    .dark__ProxyLeft {
+      width: calc(18% - 7px);
+      border-right: 2px solid $bgStroke;
+      height: calc(100vh - 85px);
+      padding-top: 7px;
+      padding-right: 14px;
+
+      .ProxyGroup {
+        height: 100%;
+        max-height: 300px;
+        overflow-y: scroll;
+        margin-right: -14px;
+
+        .ProxyGroup__content {
+          margin-right: 14px;
+
+          &:hover {
+            .dark__name {
+              color: $accent;
+            }
+          }
+
+          .darkProxiesGroup {
+            @include flexRowSpaceBetween();
+            padding: 11px 14px 11px 22px;
+
+            .dark__Proxy__left {
+              @include flexColumn();
+              gap: 6px;
+
+              .dark__ProxyGroup__header {
+                @include flexColumn();
+                gap: 3px;
+
+                .dark__name {
+                  @include font12();
+                  color: white;
+                }
+
+                .dark__subtitle {
+                  @include font10();
+                  color: $gray;
+                }
+              }
+            }
+            .dark__ProxyGroup__right {
+              @include flexRowSpaceBetween();
+              gap: 3px;
+
+              img {
+                width: 14px;
+                height: 14px;
+              }
+            }
+
+            .light__ProfileGroup__right {
+              img {
+                width: 14px;
+                height: 14px;
+              }
+            }
+          }
+        }
+
+        .darkactiveProxyGroup {
+          background: $bgThird;
+          border: $borderDark;
+          border-radius: 0px 5px 5px 0px;
+        }
+
+        .lightactiveProxyGroup {
+          background: #ffffff;
+          border: $borderLight;
+          border-radius: 0px 5px 5px 0px;
+        }
+      }
+    }
+    .light__ProxyLeft {
+      width: calc(18% - 7px);
+      border-right: $borderLight;
+      height: calc(100vh - 85px);
+      padding-top: 7px;
+      padding-right: 14px;
+
+      .ProxyGroup {
+        height: 100%;
+        max-height: 300px;
+        overflow-y: scroll;
+        margin-right: -14px;
+
+        .ProxyGroup__content {
+          margin-right: 14px;
+
+          &:hover {
+            .dark__name {
+              color: $accent;
+            }
+          }
+
+          .lightProxiesGroup {
+            @include flexRowSpaceBetween();
+            padding: 11px 14px 11px 22px;
+
+            .light__Proxy__left {
+              @include flexColumn();
+              gap: 6px;
+
+              .light__ProxyGroup__header {
+                @include flexColumn();
+                gap: 3px;
+
+                .light__name {
+                  @include font12();
+                  color: $lightBlack;
+                }
+
+                .light__subtitle {
+                  @include font10();
+                  color: $gray;
+                }
+              }
+            }
+            .light__ProxyGroup__right {
+              @include flexRowSpaceBetween();
+              gap: 3px;
+
+              img {
+                width: 14px;
+                height: 14px;
+              }
+            }
+          }
+        }
+        .lightactiveProxyGroup {
+          background: #ffffff;
+          border: $borderLight;
+          border-radius: 0px 5px 5px 0px;
+        }
+      }
+    }
+
+    .dark__Proxies {
+      flex: 1;
+      height: 100%;
+      position: relative;
+      .Proxy__content {
+        .Proxy__content__body {
+          @include flexColumn();
+          gap: 10px;
+          padding: 15px 22px;
+          .proxy__item__content {
+            @include flexRowSpaceBetween();
+            background: $bgSecond;
+            border: $border-light;
+            padding: 11px 16px;
+            border-radius: 5px;
+            .proxy__item__body {
+              @include flexRowTop();
+              gap: 20px;
+              span {
+                @include font10();
+              }
+              .proxy_item_id {
+                color: #ffffff66;
+              }
+              .proxy_item__url {
+                color: #ffffff;
+              }
+              .proxy_item__delay {
+                color: #74ff79;
+              }
+            }
+            .actions {
+              @include flexRowTop();
+              gap: 9px;
+            }
+          }
+        }
+      }
+    }
+    .light__Proxies {
+      flex: 1;
+      height: 100%;
+      position: relative;
+      .Proxy__content {
+        .Proxy__content__body {
+          @include flexColumn();
+          gap: 10px;
+          padding: 15px 22px;
+          .proxy__item__content {
+            @include flexRowSpaceBetween();
+            background: $bgLight;
+            border: $borderLight;
+            padding: 11px 16px;
+            border-radius: 5px;
+            .proxy__item__body {
+              @include flexRowTop();
+              gap: 20px;
+              span {
+                @include font10();
+              }
+              .proxy_item_id {
+                color: #00000066;
+              }
+              .proxy_item__url {
+                color: $lightBlack;
+              }
+              .proxy_item__delay {
+                color: #00ae31;
+              }
+            }
+            .actions {
+              @include flexRowTop();
+              gap: 9px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

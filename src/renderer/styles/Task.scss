@@ -1,0 +1,998 @@
+@import './variables';
+
+.dark__Task {
+  @include flexColumn();
+  width: 100%;
+  position: relative;
+
+  .dark__groupTitle {
+    @include font12();
+    color: white;
+  }
+
+  .dark__subTitle {
+    @include fontNine();
+    color: $gray;
+  }
+
+  button {
+    background: $bgSecond;
+    border: $borderDark;
+    border-radius: 5px;
+    text-align: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    position: relative;
+  }
+  .create_Btn {
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    $border: 2px;
+    background-clip: padding-box; /* !importanté */
+    border: solid $border transparent; /* !importanté */
+    &:hover {
+      background: $bgPurple;
+      border: solid 0px transparent;
+      &::before {
+        margin: 0;
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      margin: -5px; /* !importanté */
+      border-radius: inherit; /* !importanté */
+      background: linear-gradient(115.31deg, #ce7cff 0%, #734bff 100%);
+      border: 2px solid;
+    }
+  }
+  .delayBtn {
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  .__taskHeader {
+    @include flexRowTop();
+    border-bottom: 2px solid $bgStroke;
+
+    .dark__taskGroup {
+      padding-right: 14px;
+      width: calc(18% - 7px);
+      border-right: 2px solid $bgStroke;
+      padding-bottom: 16px;
+
+      //height: calc(100vh - 42px);
+      @include flexRowSpaceBetween();
+
+      .__taskGroup__title {
+        @include flexColumn();
+        gap: 2px;
+        padding-left: 23px;
+      }
+    }
+    .light__taskGroup {
+      padding-right: 14px;
+      width: calc(18% - 7px);
+      border-right: 2px solid $bgStroke;
+      padding-bottom: 16px;
+
+      //height: calc(100vh - 42px);
+      @include flexRowSpaceBetween();
+
+      .__taskGroup__title {
+        @include flexColumn();
+        gap: 2px;
+        padding-left: 23px;
+      }
+    }
+
+    .taskContent__header {
+      @include flexRowSpaceBetween();
+      flex: 1;
+      margin: 0 22px;
+      padding-bottom: 16px;
+
+      .task_header_left {
+        @include flexColumn();
+      }
+
+      .task_header_right {
+        @include flexRowSpaceBetween();
+
+        .add__delayGroup {
+          @include flexRowTop();
+          gap: 6px;
+        }
+
+        .borders {
+          border: $borderDark;
+          margin: 0 10px;
+          height: 30px;
+        }
+
+        .import__export {
+          @include flexRowTop();
+          gap: 6px;
+          .importBtn {
+            &:hover {
+              background: transparent;
+            }
+          }
+          .exportBtn {
+            &:hover {
+              background: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .__taskContent {
+    @include flexRowTop();
+    height: calc(100vh - 78px);
+
+    .dark__taskLeft {
+      width: calc(18% - 7px);
+      border-right: 2px solid $bgStroke;
+      height: calc(100vh - 85px);
+      padding-top: 7px;
+      padding-right: 14px;
+
+      .taskGroup {
+        height: 100%;
+        max-height: 300px;
+        overflow-y: scroll;
+        margin-right: -14px;
+
+        .taskGroup__content {
+          margin-right: 14px;
+          &:hover {
+            .dark__name {
+              color: $accent;
+            }
+          }
+
+          .darktasksGroup {
+            @include flexRowSpaceBetween();
+            padding: 11px 14px 11px 22px;
+
+            .dark__taskGroup__left {
+              @include flexColumn();
+              gap: 6px;
+
+              .dark__taskGroup__header {
+                @include flexRowTop();
+                gap: 3px;
+
+                .dark__name {
+                  @include font12();
+                  color: white;
+                }
+
+                .dark__taskNumber {
+                  @include fontNine();
+                  color: $gray;
+                }
+
+                .taskActive {
+                  background: $bgGreen;
+                  width: 5px;
+                  height: 5px;
+                  border-radius: 50%;
+                }
+              }
+
+              .dark__taskGroup__content {
+                @include flexRowSpaceBetween();
+                gap: 3px;
+                img {
+                  width: 10px;
+                  height: 10px;
+                }
+
+                span {
+                  @include fontNine();
+                  color: white;
+                }
+
+                .tasks__cart__part {
+                  @include flexRowSpaceBetween();
+                  background: #23444e;
+                  border-radius: 1px;
+                  padding: 2px 6px;
+                  opacity: 0.2;
+                  z-index: 1;
+                  gap: 9px;
+                  img {
+                    z-index: 1000;
+                  }
+                }
+
+                .tasks__success__part {
+                  @include flexRowSpaceBetween();
+                  background: #2d4933;
+                  opacity: 0.2;
+                  border-radius: 1px;
+                  padding: 2px 6px;
+                  gap: 9px;
+                }
+
+                .tasks__decline__part {
+                  @include flexRowSpaceBetween();
+                  background: #492f35;
+                  opacity: 0.2;
+                  border-radius: 1px;
+                  padding: 2px 6px;
+                  gap: 9px;
+                }
+              }
+            }
+
+            .dark__taskGroup__right {
+            }
+          }
+        }
+        .darkactiveTaskGroup {
+          background: $bgThird;
+          border: $borderDark;
+          border-radius: 0px 5px 5px 0px;
+        }
+        .lightactiveTaskGroup {
+          background: #ffffff;
+          border: $borderLight;
+          border-radius: 0px 5px 5px 0px;
+        }
+      }
+    }
+    .dark_tasks {
+      flex: 1;
+      height: 100%;
+      position: relative;
+      .task__content {
+        @include flexColumn();
+        gap: 9px;
+
+        .task__content__header {
+          @include flexRowTop();
+          border-bottom: $borderDark;
+          padding: 7px 14px;
+
+          .header_id {
+            @include fontNine();
+            color: $gray;
+            padding: 0 32px;
+          }
+
+          .header__store {
+            width: 10%;
+            padding-left: 9px;
+            @include fontNine();
+            color: $gray;
+          }
+
+          .header__product {
+            width: 19%;
+            @include fontNine();
+            color: $gray;
+          }
+
+          .header__mode {
+            width: 12%;
+            @include fontNine();
+            color: $gray;
+          }
+
+          .header__proxy {
+            width: 12%;
+            @include fontNine();
+            color: $gray;
+          }
+
+          .header__profile {
+            //padding: 0 15px 0 39px;
+            @include fontNine();
+            width: 10%;
+
+            color: $gray;
+          }
+
+          .header__status {
+            //padding: 0 15px;
+            width: 20%;
+
+            @include fontNine();
+            color: $gray;
+          }
+        }
+        .task__content__body {
+          @include flexColumn();
+          gap: 10px;
+          height: 100%;
+          max-height: 334px;
+          overflow-y: scroll;
+          .task__item__content {
+            @include flexColumn();
+            .task__item__body {
+              @include flexRowTop();
+              background: $bgSecond;
+              padding: 12px 14px;
+              border-radius: 5px;
+              border: $border-light;
+              margin: 0 17px;
+
+              .content_id {
+                @include font10();
+                color: #ffffff66;
+                padding: 0 14px;
+              }
+
+              .content__store {
+                @include font10();
+                padding: 0 2px 0 34px;
+                width: 10%;
+                color: #ffffff;
+              }
+
+              .content__product {
+                @include font10();
+                width: 19%;
+                color: $accent;
+              }
+
+              .content__mode {
+                @include font10();
+                color: #ffffff66;
+                width: 13%;
+                padding-left: 9px;
+              }
+
+              .content__proxy {
+                @include font10();
+                color: #ffffff66;
+                width: 12%;
+              }
+
+              .content__profile {
+                @include font10();
+                color: #ffffff66;
+                width: 10%;
+              }
+
+              .content__status {
+                @include font10();
+                color: #74ff79;
+                width: 20%;
+              }
+
+              .content__action {
+                @include flexRowTop();
+                gap: 10px;
+                img {
+                  width: 10px;
+                  height: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .task__content__footer {
+    @include flexRowTop();
+    position: absolute;
+    top: 89%;
+    left: 39%;
+    .footerBtn {
+      @include flexRowTop();
+      margin: 0 auto;
+      gap: 10px;
+      button {
+        @include flexRowTop();
+        border-radius: 5px;
+        width: 110px;
+        gap: 5px;
+        position: relative;
+        box-sizing: border-box;
+        background-clip: padding-box;
+        border: solid 2px transparent;
+        span {
+          color: white;
+          @include font10();
+          display: flex;
+          align-items: center;
+        }
+      }
+      .__startAll {
+        &:hover {
+          background: $bgGreen;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          margin: -5px;
+          border-radius: inherit;
+          background: linear-gradient(115.31deg, #74ff79 0%, #60ffbc 100%);
+          border: 2px solid;
+        }
+      }
+      .__stopAll {
+        &:hover {
+          background: $bgRed;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          margin: -5px;
+          border-radius: inherit;
+          border: 2px solid;
+          background: linear-gradient(115.31deg, #ff8990 0%, #ff607c 100%);
+        }
+      }
+      .__editAll {
+        &:hover {
+          background: $bgBlue;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          margin: -5px;
+          border-radius: inherit;
+          border: 2px solid;
+          background: linear-gradient(115.31deg, #50e4f8 0%, #00c2ff 100%);
+        }
+      }
+      .__deleteAll {
+        &:hover {
+          background: $bgRed;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          margin: -5px;
+          border-radius: inherit;
+          background: linear-gradient(115.31deg, #ff8990 0%, #ff607c 100%);
+          border: 2px solid;
+        }
+      }
+    }
+  }
+
+  .dark__taskLeft {
+    @include flexColumn();
+    gap: 7px;
+  }
+  .light__taskLeft {
+    @include flexColumn();
+    gap: 7px;
+  }
+
+  .dark__tasks {
+    flex: 1;
+    margin: 0 22px;
+
+    .task__header {
+    }
+  }
+  .light__tasks {
+    flex: 1;
+    margin: 0 22px;
+
+    .task__header {
+    }
+  }
+}
+
+.light__Task {
+  @include flexColumn();
+  width: 100%;
+  position: relative;
+  .light__groupTitle {
+    @include font12();
+    color: $lightBlack;
+  }
+
+  .light__subTitle {
+    @include fontNine();
+    color: $gray;
+  }
+  button {
+    background: $bgLight;
+    border: $borderLight;
+    border-radius: 5px;
+    text-align: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    position: relative;
+  }
+  .create_Btn {
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    $border: 3px;
+    background-clip: padding-box; /* !importanté */
+    border: solid $border #ce7cff; /* !importanté */
+    &:hover {
+      background: $bgPurple;
+      border: solid 0px transparent;
+      &::before {
+        margin: 0;
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      margin: -5px; /* !importanté */
+      border-radius: inherit; /* !importanté */
+      background: linear-gradient(115.31deg, #ce7cff 0%, #734bff 100%) !important;
+      border: 2px solid;
+    }
+  }
+  .delayBtn {
+    &:hover {
+      background: transparent;
+    }
+  }
+  .__taskHeader {
+    @include flexRowTop();
+    border-bottom: $borderLight;
+    .light__taskGroup {
+      padding-right: 14px;
+      width: calc(18% - 7px);
+      border-right: $borderLight;
+      padding-bottom: 16px;
+      @include flexRowSpaceBetween();
+      .__taskGroup__title {
+        @include flexColumn();
+        gap: 2px;
+        padding-left: 23px;
+      }
+    }
+
+    .taskContent__header {
+      @include flexRowSpaceBetween();
+      flex: 1;
+      margin: 0 22px;
+      padding-bottom: 16px;
+
+      .task_header_left {
+        @include flexColumn();
+      }
+
+      .task_header_right {
+        @include flexRowSpaceBetween();
+
+        .add__delayGroup {
+          @include flexRowTop();
+          gap: 6px;
+        }
+
+        .borders {
+          border: $borderLight;
+          margin: 0 10px;
+          height: 30px;
+        }
+
+        .import__export {
+          @include flexRowTop();
+          gap: 6px;
+          .importBtn {
+            &:hover {
+              background: transparent;
+            }
+          }
+          .exportBtn {
+            &:hover {
+              background: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .__taskContent {
+    @include flexRowTop();
+    height: calc(100vh - 78px);
+    .light__taskLeft {
+      width: calc(18% - 7px);
+      border-right: $borderLight;
+      height: calc(100vh - 85px);
+      padding-top: 7px;
+      padding-right: 14px;
+
+      .taskGroup {
+        height: 100%;
+        max-height: 300px;
+        overflow-y: scroll;
+        margin-right: -14px;
+
+        .taskGroup__content {
+          margin-right: 14px;
+          &:hover {
+            .dark__name {
+              color: $accent;
+            }
+          }
+
+          .lighttasksGroup {
+            @include flexRowSpaceBetween();
+            padding: 11px 14px 11px 22px;
+
+            .light__taskGroup__left {
+              @include flexColumn();
+              gap: 6px;
+
+              .light__taskGroup__header {
+                @include flexRowTop();
+                gap: 3px;
+
+                .light__name {
+                  @include font12();
+                  color: $lightBlack;
+                }
+
+                .light__taskNumber {
+                  @include fontNine();
+                  color: $gray;
+                }
+
+                .taskActive {
+                  background: $bgGreen;
+                  width: 5px;
+                  height: 5px;
+                  border-radius: 50%;
+                }
+              }
+
+              .light__taskGroup__content {
+                @include flexRowSpaceBetween();
+                gap: 3px;
+                img {
+                  width: 10px;
+                  height: 10px;
+                }
+
+                span {
+                  @include fontNine();
+                  color: $lightBlack;
+                }
+
+                .tasks__cart__part {
+                  @include flexRowSpaceBetween();
+                  background: $bgBlue;
+                  border-radius: 1px;
+                  padding: 2px 6px;
+                  opacity: 0.2;
+                  z-index: 1;
+                  gap: 9px;
+                  img {
+                    z-index: 1000;
+                  }
+                }
+
+                .tasks__success__part {
+                  @include flexRowSpaceBetween();
+                  background: #2d4933;
+                  opacity: 0.2;
+                  border-radius: 1px;
+                  padding: 2px 6px;
+                  gap: 9px;
+                }
+
+                .tasks__decline__part {
+                  @include flexRowSpaceBetween();
+                  background: #492f35;
+                  opacity: 0.2;
+                  border-radius: 1px;
+                  padding: 2px 6px;
+                  gap: 9px;
+                }
+              }
+            }
+
+            .dark__taskGroup__right {
+            }
+          }
+        }
+        .darkactiveTaskGroup {
+          background: $bgThird;
+          border: $borderDark;
+          border-radius: 0px 5px 5px 0px;
+        }
+        .lightactiveTaskGroup {
+          background: #ffffff;
+          border: $borderLight;
+          border-radius: 0px 5px 5px 0px;
+        }
+      }
+    }
+    .light_tasks {
+      flex: 1;
+      height: 100%;
+      position: relative;
+      .task__content {
+        @include flexColumn();
+        gap: 9px;
+
+        .task__content__header {
+          @include flexRowTop();
+          border-bottom: $borderLight;
+          padding: 7px 14px;
+
+          .header_id {
+            @include fontNine();
+            color: $gray;
+            padding: 0 32px;
+          }
+
+          .header__store {
+            width: 10%;
+            padding-left: 9px;
+            @include fontNine();
+            color: $gray;
+          }
+
+          .header__product {
+            width: 19%;
+            @include fontNine();
+            color: $gray;
+          }
+
+          .header__mode {
+            width: 12%;
+            @include fontNine();
+            color: $gray;
+          }
+
+          .header__proxy {
+            width: 12%;
+            @include fontNine();
+            color: $gray;
+          }
+
+          .header__profile {
+            //padding: 0 15px 0 39px;
+            @include fontNine();
+            width: 10%;
+
+            color: $gray;
+          }
+
+          .header__status {
+            //padding: 0 15px;
+            width: 20%;
+
+            @include fontNine();
+            color: $gray;
+          }
+        }
+        .task__content__body {
+          @include flexColumn();
+          gap: 10px;
+          height: 100%;
+          max-height: 334px;
+          overflow-y: scroll;
+          .task__item__content {
+            @include flexColumn();
+            .task__item__body {
+              @include flexRowTop();
+              background: $bgLight;
+              padding: 12px 14px;
+              border-radius: 5px;
+              border: $borderLight;
+              margin: 0 17px;
+
+              .content_id {
+                @include font10();
+                color: #00000066;
+                padding: 0 14px;
+              }
+
+              .content__store {
+                @include font10();
+                padding: 0 2px 0 34px;
+                width: 10%;
+                color: $lightBlack;
+              }
+
+              .content__product {
+                @include font10();
+                width: 19%;
+                color: #00000066;
+              }
+
+              .content__mode {
+                @include font10();
+                color: $accent;
+                width: 13%;
+                padding-left: 9px;
+              }
+
+              .content__proxy {
+                @include font10();
+                color: #00000066;
+                width: 12%;
+              }
+
+              .content__profile {
+                @include font10();
+                color: #00000066;
+                width: 10%;
+              }
+
+              .content__status {
+                @include font10();
+                color: #00ae31;
+                width: 20%;
+              }
+
+              .content__action {
+                @include flexRowTop();
+                gap: 10px;
+                img {
+                  width: 10px;
+                  height: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .task__content__footer {
+    @include flexRowTop();
+    position: absolute;
+    top: 89%;
+    left: 39%;
+    .footerBtn {
+      @include flexRowTop();
+      margin: 0 auto;
+      gap: 10px;
+      button {
+        @include flexRowTop();
+        border-radius: 5px;
+        width: 110px;
+        gap: 5px;
+        position: relative;
+        box-sizing: border-box;
+        background-clip: padding-box;
+        border: solid 2px transparent;
+        span {
+          color: white;
+          @include font10();
+          display: flex;
+          align-items: center;
+        }
+      }
+      .__startAll {
+        border: solid 2px #00ae31;
+        &:hover {
+          background: $bgGreen;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          margin: -5px;
+          border-radius: inherit;
+          background: linear-gradient(115.31deg, #74ff79 0%, #60ffbc 100%);
+          border: 2px solid;
+        }
+        span {
+          color: $bgBlack;
+        }
+      }
+      .__stopAll {
+        border: solid 2px #ff8990;
+
+        &:hover {
+          background: $bgRed;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          margin: -5px;
+          border-radius: inherit;
+          border: 2px solid;
+          background: linear-gradient(115.31deg, #ff8990 0%, #ff607c 100%);
+        }
+        span {
+          color: $bgBlack;
+        }
+      }
+      .__editAll {
+        border: solid 2px #50e4f8;
+
+        &:hover {
+          background: $bgBlue;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          margin: -5px;
+          border-radius: inherit;
+          border: 2px solid;
+          background: linear-gradient(115.31deg, #50e4f8 0%, #00c2ff 100%);
+        }
+        span {
+          color: $bgBlack;
+        }
+      }
+      .__deleteAll {
+        border: solid 2px #ff8990;
+        &:hover {
+          background: $bgRed;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+          margin: -5px;
+          border-radius: inherit;
+          background: linear-gradient(115.31deg, #ff8990 0%, #ff607c 100%);
+          border: 2px solid;
+        }
+        span {
+          color: $bgBlack;
+        }
+      }
+    }
+  }
+}

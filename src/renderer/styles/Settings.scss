@@ -1,0 +1,1100 @@
+@import './variables.scss';
+
+.react-switch-handle {
+  width: 11px !important;
+  height: 11px !important;
+  top: 2px !important;
+  transform: translateX(1px);
+}
+
+.darkSettings {
+  //padding: 0px 38px 0 18px;
+  overflow-x: hidden;
+
+  button {
+    @include font10();
+    border-radius: 5px;
+  }
+
+  .settingHeader {
+    @include flexRowSpaceBetween();
+    border-bottom: $borderDark;
+    padding-bottom: 15px;
+
+    .settingLeft {
+      @include flexColumn();
+      padding-left: 18px;
+
+      .title {
+        @include font12();
+        color: white;
+      }
+
+      .manage {
+        @include fontNine();
+        color: $gray;
+      }
+    }
+
+    .settingRight {
+      @include flexRowTop();
+      gap: 7px;
+      padding-right: 38px;
+
+      .importPart {
+        gap: 6px;
+        @include flexRowTop();
+
+        button {
+          background: $bgSecond;
+          width: 36px;
+          height: 36px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+
+        .importBtn {
+          .hoverSvg {
+            display: none;
+          }
+
+          &:hover {
+            .hoverSvg {
+              display: block;
+            }
+
+            .graySvg {
+              display: none;
+            }
+          }
+        }
+
+        .exportBtn {
+          background: $bgSecond;
+
+          .hoverSvg {
+            display: none;
+          }
+
+          &:hover {
+            .hoverSvg {
+              display: block;
+            }
+
+            .graySvg {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .buttonsPart {
+        gap: 9px;
+        @include flexRowTop();
+
+        button {
+          @include font10();
+          border-radius: 5px;
+          color: white;
+          background: $bgSecond;
+          padding: 11px 43px;
+        }
+
+        .saveBtn {
+          position: relative;
+          border: 2px solid transparent;
+          background-clip: padding-box;
+          border-radius: 5px;
+
+          &:hover {
+            background: linear-gradient(115.31deg, #00ae31 0%, #009355 100%), linear-gradient(0deg, #ffffff, #ffffff);
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            bottom: -2px;
+            left: -2px;
+            right: -2px;
+            background: linear-gradient(115.31deg, #74ff79 0%, #60ffbc 100%);
+            z-index: -1;
+            border-radius: 5px;
+          }
+        }
+
+        .logsBtn {
+          position: relative;
+          border: 2px solid transparent;
+          background-clip: padding-box;
+          border-radius: 5px;
+
+          &:hover {
+            background: linear-gradient(115.31deg, #50e4f8 0%, #00c2ff 100%);
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            bottom: -2px;
+            left: -2px;
+            right: -2px;
+            background: linear-gradient(115.31deg, #50e4f8 0%, #00c2ff 100%);
+            z-index: -1;
+            border-radius: 5px;
+          }
+        }
+
+        .logoutBtn {
+          position: relative;
+          border: 2px solid transparent;
+          background-clip: padding-box;
+          border-radius: 5px;
+
+          &:hover {
+            background: linear-gradient(115.31deg, #ff8990 0%, #ff607c 100%), linear-gradient(0deg, #ffffff, #ffffff);
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            bottom: -2px;
+            left: -2px;
+            right: -2px;
+            background: linear-gradient(115.31deg, #ff8990 0%, #ff607c 100%);
+            z-index: -1;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .settingBody {
+    padding: 20px 36px 24px 25px;
+    @include flexRowTop();
+
+    .setting__part {
+      @include flexRowTop();
+      gap: 17px;
+      width: 100%;
+      //padding: 20px 36px  0 18px;
+      .testWebhook {
+        background: $bgSecond;
+        border: $borderDark;
+        padding: 17px 28px;
+        border-radius: 10px;
+        @include flexColumn();
+        gap: 13px;
+        flex: 1;
+
+        .webhookHeader {
+          @include flexRowTop();
+          gap: 5px;
+
+          .title {
+            @include font12();
+            color: white;
+          }
+
+          .testTitle {
+            @include font10();
+            background: -webkit-linear-gradient(115.31deg, #74ff79 0%, #60ffbc 100%), -webkit-linear-gradient(0deg, #ffffff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+
+        .webhookBody {
+          @include flexColumn();
+          gap: 18px;
+          width: 100%;
+
+          .success__decline {
+            @include flexRowTop();
+            gap: 10px;
+            width: 100%;
+
+            .successWebhook {
+              width: 50%;
+              @include flexColumn();
+              gap: 7px;
+
+              span {
+                @include fontNine();
+                color: $gray;
+              }
+
+              input {
+                background: $bgThird;
+                border: $borderDark;
+                padding: 12px 65px 12px 18px;
+                @include fontNine();
+                color: $gray;
+                border-radius: 5px;
+              }
+
+              .enabled {
+                @include flexRowSpaceBetween();
+                background: $bgThird;
+                border: $borderDark;
+                padding: 12px 18px 12px 18px;
+                @include fontNine();
+                color: $gray;
+                border-radius: 5px;
+
+                .enableTitle {
+                  @include fontNine();
+                  color: $gray;
+                }
+
+                .enableDiscord {
+                  height: 15px;
+                  width: 32px;
+                }
+              }
+            }
+
+            .declineWebhook {
+              flex: 1;
+              @include flexColumn();
+              gap: 7px;
+
+              span {
+                @include fontNine();
+                color: $gray;
+              }
+
+              input {
+                background: $bgThird;
+                border: $borderDark;
+                padding: 12px 65px 12px 18px;
+                @include fontNine();
+                color: $gray;
+                border-radius: 5px;
+              }
+
+              .select {
+                @include flexRowSpaceBetween();
+                background: $bgThird;
+                border: $borderDark;
+                padding: 12px 18px 12px 18px;
+                @include fontNine();
+                color: $gray;
+                border-radius: 5px;
+
+                .clickSelect {
+                  @include fontNine();
+                  color: $gray;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .otherSettings {
+        background: $bgSecond;
+        border: $borderDark;
+        border-radius: 10px;
+        padding: 17px 28px;
+        @include flexColumn();
+        gap: 13px;
+        flex: 1;
+
+        .otherHeader {
+          .title {
+            @include font12();
+            color: white;
+          }
+        }
+
+        .otherBody {
+          @include flexColumn();
+          gap: 20px;
+
+          .AutoSolve {
+            @include flexColumn();
+            gap: 7px;
+
+            .title {
+              @include fontNine();
+              color: $gray;
+            }
+
+            .token {
+              @include flexRowTop();
+              position: relative;
+
+              input {
+                background: $bgThird;
+                border: $borderDark;
+                padding: 12px 65px 12px 18px;
+                @include fontNine();
+                color: $gray;
+                width: 83%;
+              }
+
+              img {
+                position: absolute;
+                right: 9px;
+                width: 16px;
+                height: 16px;
+              }
+            }
+          }
+
+          .AutoSolve__Captcha__Theme {
+            @include flexRowTop();
+            gap: 10px;
+            flex: 1;
+            width: 100%;
+
+            .autoBox {
+              flex: 1;
+              @include flexColumn();
+              gap: 7px;
+
+              span {
+                @include fontNine();
+                color: $gray;
+              }
+
+              .enabled {
+                @include flexRowSpaceBetween();
+                background: $bgThird;
+                border: $borderDark;
+                padding: 12px 18px 12px 18px;
+                @include fontNine();
+                color: $gray;
+                border-radius: 5px;
+
+                .enableTitle {
+                  @include fontNine();
+                  color: $gray;
+                }
+              }
+            }
+
+            .captchaBox {
+              flex: 1;
+              @include flexColumn();
+              gap: 7px;
+
+              span {
+                @include fontNine();
+                color: $gray;
+              }
+
+              .enabled {
+                @include flexRowSpaceBetween();
+                background: $bgThird;
+                border: $borderDark;
+                padding: 12px 18px 12px 18px;
+                @include fontNine();
+                color: $gray;
+                border-radius: 5px;
+
+                .enableTitle {
+                  @include fontNine();
+                  color: $gray;
+                }
+              }
+            }
+
+            .themeBox {
+              flex: 1;
+              @include flexColumn();
+              gap: 7px;
+
+              span {
+                @include fontNine();
+                color: $gray;
+              }
+
+              .enabled {
+                @include flexRowSpaceBetween();
+                background: $bgThird;
+                border: $borderDark;
+                padding: 12px 18px 12px 18px;
+                @include fontNine();
+                color: $gray;
+                border-radius: 5px;
+
+                .enableTitle {
+                  @include fontNine();
+                  color: $gray;
+                  text-transform: capitalize !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .borders {
+    height: 2px;
+    width: 100%;
+    background: #19181d;
+  }
+
+  .CaptchaHarvester {
+    .captcha__header {
+      @include flexRowTop();
+      padding: 10px 0 14px 18px;
+      gap: 19px;
+
+      .TitlePart {
+        @include flexColumn();
+        gap: 2px;
+
+        .title {
+          @include font12();
+          color: white;
+        }
+
+        .subtitle {
+          @include fontNine();
+          color: $gray;
+        }
+      }
+
+      .createPart {
+        background: $bgSecond;
+        border-radius: 5px;
+
+        svg {
+          padding: 11px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .captcha__body {
+      padding: 11px 25px;
+      @include flexRowTop();
+      gap: 18px;
+      //overflow-x: scroll;
+      -webkit-appearance: none;
+      .captcha__content {
+        background: $bgSecond;
+        border-radius: 10px;
+        width: 30%;
+        border: $borderDark;
+        .harvesterHeader {
+          background: $bgThird;
+          border-radius: 10px 10px 0px 0px;
+          @include flexColumn();
+          padding: 11px 22px;
+          gap: 2px;
+
+          .title {
+            @include font12();
+            color: white;
+          }
+
+          .subtitle {
+            @include fontNine();
+            color: $gray;
+          }
+        }
+
+        .harvesterbody {
+          @include flexColumn();
+          gap: 10px;
+          padding: 13px 17px;
+          select,
+          input {
+            background: $bgThird;
+            border: $borderDark;
+          }
+        }
+
+        .harvesterFooter {
+          @include flexRowSpaceBetween();
+          padding: 11px 17px;
+          .footer__left {
+            @include flexRowTop();
+            gap: 6px;
+            justify-content: center;
+            text-align: center;
+            padding-left: 5px;
+            .activeState {
+              height: 5px;
+              width: 5px;
+              border-radius: 33px;
+              background: linear-gradient(115.31deg, #74ff79 0%, #60ffbc 100%), linear-gradient(0deg, #ffffff, #ffffff);
+              display: flex;
+            }
+            .inUse {
+              color: #00ae31;
+              @include font10();
+            }
+          }
+          .footer__right {
+            .delete {
+              @include flexRowTop();
+              border-radius: 5px;
+              background: $bgRed;
+              gap: 3px;
+              padding: 12px 29px;
+              span {
+                @include font10();
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.lightSettings {
+  //padding: 0px 38px 0 18px;
+  overflow-x: hidden;
+
+  button {
+    @include font10();
+    border-radius: 5px;
+  }
+
+  .settingHeader {
+    @include flexRowSpaceBetween();
+    border-bottom: 2px solid #ededed;
+    padding-bottom: 15px;
+
+    .settingLeft {
+      @include flexColumn();
+      padding-left: 18px;
+
+      .title {
+        @include font12();
+        color: $bgBlack;
+      }
+
+      .manage {
+        @include fontNine();
+        color: $gray;
+      }
+    }
+
+    .settingRight {
+      @include flexRowTop();
+      gap: 7px;
+      padding-right: 38px;
+
+      .importPart {
+        gap: 6px;
+        @include flexRowTop();
+
+        button {
+          background: $bgLight;
+          width: 36px;
+          height: 36px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+
+        .importBtn {
+          .hoverSvg {
+            display: none;
+          }
+
+          &:hover {
+            .hoverSvg {
+              display: block;
+            }
+
+            .graySvg {
+              display: none;
+            }
+          }
+        }
+
+        .exportBtn {
+          background: $bgLight;
+
+          .hoverSvg {
+            display: none;
+          }
+
+          &:hover {
+            .hoverSvg {
+              display: block;
+            }
+
+            .graySvg {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .buttonsPart {
+        gap: 9px;
+        @include flexRowTop();
+
+        button {
+          @include font10();
+          border-radius: 5px;
+          color: $bgBlack;
+          background: $bgLight;
+          padding: 11px 43px;
+        }
+
+        .saveBtn {
+          position: relative;
+          border: 2px solid #00ae31;
+          background-clip: padding-box;
+          border-radius: 5px;
+
+          &:hover {
+            background: linear-gradient(115.31deg, #00ae31 0%, #009355 100%), linear-gradient(0deg, #ffffff, #ffffff);
+
+            &::after {
+              content: '';
+              position: absolute;
+              top: -2px;
+              bottom: -2px;
+              left: -2px;
+              right: -2px;
+              background: linear-gradient(115.31deg, #00ae31 0%, #009355 100%);
+              z-index: -1;
+              border-radius: 5px;
+            }
+          }
+        }
+
+        .logsBtn {
+          position: relative;
+          border: 2px solid #50e4f8;
+          background-clip: padding-box;
+          border-radius: 5px;
+
+          &:hover {
+            background: linear-gradient(115.31deg, #50e4f8 0%, #00c2ff 100%);
+
+            &::after {
+              content: '';
+              position: absolute;
+              top: -2px;
+              bottom: -2px;
+              left: -2px;
+              right: -2px;
+              background: linear-gradient(115.31deg, #50e4f8 0%, #00c2ff 100%);
+              z-index: -1;
+              border-radius: 5px;
+            }
+          }
+        }
+
+        .logoutBtn {
+          position: relative;
+          border: 2px solid #ff8990;
+          background-clip: padding-box;
+          border-radius: 5px;
+
+          &:hover {
+            background: linear-gradient(115.31deg, #ff8990 0%, #ff607c 100%), linear-gradient(0deg, #ffffff, #ffffff);
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            bottom: -2px;
+            left: -2px;
+            right: -2px;
+            background: linear-gradient(115.31deg, #ff8990 0%, #ff607c 100%);
+            z-index: -1;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .settingBody {
+    padding: 20px 36px 24px 25px;
+    @include flexRowTop();
+
+    .setting__part {
+      @include flexRowTop();
+      gap: 17px;
+      width: 100%;
+      //padding: 20px 36px  0 18px;
+      .testWebhook {
+        background: $bgLight;
+        border: $borderLight;
+        padding: 17px 28px;
+        border-radius: 10px;
+        @include flexColumn();
+        gap: 13px;
+        flex: 1;
+
+        .webhookHeader {
+          @include flexRowTop();
+          gap: 5px;
+
+          .title {
+            @include font12();
+            color: $bgBlack;
+          }
+
+          .testTitle {
+            @include font10();
+            background: -webkit-linear-gradient(115.31deg, #00ae31 0%, #009355 100%), -webkit-linear-gradient(0deg, #ffffff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+
+        .webhookBody {
+          @include flexColumn();
+          gap: 18px;
+          width: 100%;
+
+          .success__decline {
+            @include flexRowTop();
+            gap: 10px;
+            width: 100%;
+
+            .successWebhook {
+              width: 50%;
+              @include flexColumn();
+              gap: 7px;
+
+              span {
+                @include fontNine();
+                color: $gray;
+              }
+
+              input {
+                background: #ffffff;
+                border: 2px solid #ededed;
+                padding: 12px 65px 12px 18px;
+                @include fontNine();
+                color: $gray;
+                border-radius: 5px;
+              }
+
+              .enabled {
+                @include flexRowSpaceBetween();
+                background: #ffffff;
+                border: 2px solid #ededed;
+                padding: 12px 18px 12px 18px;
+                @include fontNine();
+                color: $gray;
+                border-radius: 5px;
+
+                .enableTitle {
+                  @include fontNine();
+                  color: $gray;
+                }
+              }
+            }
+
+            .declineWebhook {
+              flex: 1;
+              @include flexColumn();
+              gap: 7px;
+
+              span {
+                @include fontNine();
+                color: $gray;
+              }
+
+              input {
+                background: #ffffff;
+                border: 2px solid #ededed;
+                padding: 12px 65px 12px 18px;
+                @include fontNine();
+                color: $gray;
+                border-radius: 5px;
+              }
+
+              .select {
+                @include flexRowSpaceBetween();
+                background: #ffffff;
+                border: 2px solid #ededed;
+                padding: 12px 18px 12px 18px;
+                @include fontNine();
+                color: $gray;
+                border-radius: 5px;
+
+                .clickSelect {
+                  @include fontNine();
+                  color: $gray;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .otherSettings {
+        background: $bgLight;
+        border: $borderLight;
+        border-radius: 10px;
+        padding: 17px 28px;
+        @include flexColumn();
+        gap: 13px;
+        flex: 1;
+
+        .otherHeader {
+          .title {
+            @include font12();
+            color: $bgBlack;
+          }
+        }
+
+        .otherBody {
+          @include flexColumn();
+          gap: 20px;
+
+          .AutoSolve {
+            @include flexColumn();
+            gap: 7px;
+
+            .title {
+              @include fontNine();
+              color: $gray;
+            }
+
+            .token {
+              @include flexRowTop();
+              position: relative;
+
+              input {
+                background: #ffffff;
+                border: 2px solid #ededed;
+                padding: 12px 65px 12px 18px;
+                @include fontNine();
+                color: $gray;
+                width: 83%;
+              }
+
+              img {
+                position: absolute;
+                right: 9px;
+                width: 16px;
+                height: 16px;
+              }
+            }
+          }
+
+          .AutoSolve__Captcha__Theme {
+            @include flexRowTop();
+            gap: 10px;
+            flex: 1;
+            width: 100%;
+
+            .autoBox {
+              flex: 1;
+              @include flexColumn();
+              gap: 7px;
+
+              span {
+                @include fontNine();
+                color: $gray;
+              }
+
+              .enabled {
+                @include flexRowSpaceBetween();
+                background: #ffffff;
+                border: 2px solid #ededed;
+                padding: 12px 18px 12px 18px;
+                @include fontNine();
+                color: $gray;
+                border-radius: 5px;
+
+                .enableTitle {
+                  @include fontNine();
+                  color: $gray;
+                }
+              }
+            }
+
+            .captchaBox {
+              flex: 1;
+              @include flexColumn();
+              gap: 7px;
+
+              span {
+                @include fontNine();
+                color: $gray;
+              }
+
+              .enabled {
+                @include flexRowSpaceBetween();
+                background: #ffffff;
+                border: 2px solid #ededed;
+                padding: 12px 18px 12px 18px;
+                @include fontNine();
+                color: $gray;
+                border-radius: 5px;
+
+                .enableTitle {
+                  @include fontNine();
+                  color: $gray;
+                }
+              }
+            }
+
+            .themeBox {
+              flex: 1;
+              @include flexColumn();
+              gap: 7px;
+
+              span {
+                @include fontNine();
+                color: $gray;
+              }
+
+              .enabled {
+                @include flexRowSpaceBetween();
+                background: #ffffff;
+                border: 2px solid #ededed;
+                padding: 12px 18px 12px 18px;
+                @include fontNine();
+                color: $gray;
+                border-radius: 5px;
+
+                .enableTitle {
+                  @include fontNine();
+                  color: $gray;
+                  text-transform: capitalize !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .borders {
+    height: 2px;
+    width: 100%;
+    background: #ededed;
+  }
+  .CaptchaHarvester {
+    .captcha__header {
+      @include flexRowTop();
+      padding: 10px 0 14px 18px;
+      gap: 19px;
+
+      .TitlePart {
+        @include flexColumn();
+        gap: 2px;
+
+        .title {
+          @include font12();
+          color: $bgBlack;
+        }
+
+        .subtitle {
+          @include fontNine();
+          color: $gray;
+        }
+      }
+
+      .createPart {
+        background: $bgLight;
+        border-radius: 5px;
+        border: 1px solid #ededed;
+        svg {
+          padding: 11px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .captcha__body {
+      padding: 11px 25px;
+      @include flexRowTop();
+      gap: 18px;
+      //overflow-x: scroll;
+      -webkit-appearance: none;
+      .captcha__content {
+        background: $bgLight;
+        border-radius: 10px;
+        width: 30%;
+        border: 1px solid #ededed;
+        .harvesterHeader {
+          background: #ffffff;
+          border-radius: 10px 10px 0px 0px;
+          @include flexColumn();
+          padding: 11px 22px;
+          gap: 2px;
+
+          .title {
+            @include font12();
+            color: $bgBlack;
+          }
+
+          .subtitle {
+            @include fontNine();
+            color: $gray;
+          }
+        }
+
+        .harvesterbody {
+          @include flexColumn();
+          gap: 10px;
+          padding: 13px 17px;
+          select,
+          input {
+            background: #ffffff;
+            border: $borderLight;
+          }
+        }
+
+        .harvesterFooter {
+          @include flexRowSpaceBetween();
+          padding: 11px 17px;
+          .footer__left {
+            @include flexRowTop();
+            gap: 6px;
+            justify-content: center;
+            text-align: center;
+            padding-left: 5px;
+            .activeState {
+              height: 5px;
+              width: 5px;
+              border-radius: 33px;
+              background: linear-gradient(115.31deg, #00ae31 0%, #009355 100%), linear-gradient(0deg, #ffffff, #ffffff);
+              display: flex;
+            }
+            .inUse {
+              color: #00ae31;
+              @include font10();
+            }
+          }
+          .footer__right {
+            .delete {
+              @include flexRowTop();
+              border-radius: 5px;
+              background: $bgRed;
+              gap: 3px;
+              padding: 12px 29px;
+              span {
+                @include font10();
+                color: $bgBlack;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
